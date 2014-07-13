@@ -1,0 +1,47 @@
+Reviewer #1: Review on the revised Version of
+"Unbiased Estimation of Permutation Entropy in
+Alzheimer's Disease Diagnosis from EEG"
+by Václav Hubata-Vacek, Jaromír Kukal, Lucie Tylová, Oldaich Vysata
+
+
+
+For the revised version of the paper, the authors did little additional work, providing some auxiliary information. The new information concerns in particular the section dealing with "medical/ experimental aspects" (major concern #3), for which the main points of my previous review are sufficiently addressed (manuscript section 4, "Application to EEG"].
+One extra table (Table 1, new enumeration) has been added to answer the questions regarding the "Investigated parameter set" (major concern #2), but this table raises again new questions (see below).
+
+In most parts, not too much effort has been spent to resolve the questions and doubts expressed in my previous report. The discussion and interpretation of the results still remain fragmentary. The reported discrimination power between both populations is very high and promising; in the light of these results it is a pity that comparison with standard techniques is missed - thus it is difficult to evaluate their findings.
+
+In the present form, I cannot recommend a publication in "Chaos, Solitons, & Fractals".
+Still major revisions are necessary to meet the standards of the journal.
+
+I will focus on some aspects:
+
+1. My major concern is still related to the use of the chosen embedding dimension or widow size w, which results in a very small number of realized symbols kN compared to the possible number of symbols on one hand, but also in a large number of different realized symbols compared to the sample size N, on the other hand.
+a. The naive estimator for the entropy H is suitable, if the sample size N is much greater than kN,, i.e. N>>kN. Millers correction applies, if this is not the case. As shown in more details in the previous report, the situation here is that kN/N is close to 1 (this is the limit of the ratio). The question is, whether Millers correction holds even in this extreme case. It would be helpful to get additional information about the numbers of actually realized symbols and how these numbers differ in both populations.
+b. Of course, Millers correction is not a constant (I did not claim this), but comparing table 2 with table 3 shows that the correction term (see, Eq. 5) is
+i. in any case close to 0.5 (minimum 0.4538)
+ii. not significantly different between group "AD" and group "CN".
+c. As mentioned in the authors reply (to "Reviewer 1/5 Statistics"), the length N of the time series (number of samples) is considered in Millers correction. N varies between N=70000 and N=120000. Because the correction formula is only an approximation, can the authors rule out that there is any bias left due to the sample sizes of both populations? A remark like "Optimum value . is in contradiction to statistical convention" (see, Section 4, page 3, Line -5) is in my opinion not an exhaustive discussion. (One way, for instance, to check this would be to truncate all time series to the same length.)
+d. The authors write (see, Section 4, page 3, Line -4): "Our interpretation is based on supposition that EEG permutation patterns are not as diverse as they theoretically should be." Can the authors specify, what they would expect from theory? In contrast, in my opinion the correction term indicates that the symbol distribution is flat, and the finite length of the time series mainly limits the diversity.
+2. In their reply and in the revised manuscript the authors give some additional information about the parameter scan, namely the remark: "We investigated its influence in the case of 8th channel in the range w = 4 to 13." and by providing the new table 1 (new enumeration). In the context of this, I see the following major questions:
+a. Did the authors perform this kind of "parameter scan" only for channel 8, or is it just the only one, which is documented in the paper? (Compare the above-cited sentence of the revised manuscript.)
+b. From the numbers of Tab. 1 it is not clear for me, why (beside all other problems) an embedding dimension w=14 is favored (see the p-values for w=12/13). What exactly is the decision criterion to use w=14?
+c. The authors emphasize (see e.g. the Conclusion) that the results using Millers correction are superior to that of the naive approach with respect to the discrimination power. Unfortunately, Tab. 1 shows only the results of the "parameter scan" using the uncorrected measures.
+d. I don't understand, why the (documented) parameter scan does not exceed w=14, where the authors claim to obtain best discrimination power.
+(Parameter in Tab. 1 range from w=4 to 13, the corresponding numbers for w=14 has to be taken from Tab. 2 instead).
+e. The authors argue that the differences between both populations may be due to the higher degree of "locally monotonic behavior" in AD compared to the control:
+i. I am not convinced from the statement that this property is difficult to show when using shorter window sizes (see also ii).
+ii. In the previous review, I noted that one could consider for the embedding other delay times than 1 (sample interval) to cover the same time horizon by using smaller embedding dimensions w. Needless to say that this all is related to the sampling rate. (For instance, given a double sampling frequency, the authors would probably not recommend to use w=28)
+iii. I do not agree to characterize the illustration of the most frequent permutation pattern in CN as "rather chaotic behavior". (Moreover and once more, the way to present the permutation pattern in Fig. 2 is not very "felicitous", because it cannot be uniquely resolved.
+Is it the identity-pattern, which is the most frequent pattern? Does this symbol show the highest density contrast between AD- and CN-group? The figure caption could give some further information.
+3. Interpretation and discussion:
+The authors agree in their reply that "it is well known that Fourier analysis offer good information about Alzheimer disease." (They added an important reference in the introduction). Next, they continue: "But the aim of this paper is to perform analysis in time domain."
+a. Indeed, I think it is worth to make these studies in time domain, but with exception of Fig. 2, I do not really see, where the authors make use of this approach.
+b. I am convinced that the paper would very much benefit, if the authors would compare their obtained discrimination power with e.g. that of standard techniques from frequency domain.
+c. It seems likely that (what the authors call) "monotonicity detection" is very much related to the known spectral excess of AD-patients in the delta- and theta-bands. For instance, it could be interesting to see the relation between the power in the low frequency range and the density of selected order patterns (e.g. the "identity-pattern"). In any case, I would expect from the authors to discuss this aspect in much more details.
+4. Miscellaneous:
+a. Is the term "prospective study" correct, if performing a parameter scan only now?
+b. Can the authors please explain what is precisely meant with the statement: "Fortunately, novel estimate generates results with more clear biomedical interpretation." I think this statement needs elaboration.
+
+
+
+

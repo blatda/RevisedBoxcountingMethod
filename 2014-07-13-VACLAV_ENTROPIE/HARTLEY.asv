@@ -1,0 +1,30 @@
+function [H0,sH0]=HARTLEY(k,N)
+if nargin == 1
+    N=sum(k);
+    k=sum(k>0);
+end
+if k>N-2
+    H0=NaN;
+    return
+end
+bay=0;
+H0=0;sH0=0;
+p=1;
+for j=1:k-1
+    p=p*(N-j)/(N+j);
+end
+q=p;
+bay=bay+p;
+H0=H0+p*log(k);
+for j=k+1:1000000
+    p=p*j*(j-1)/(j-k)/(N+j-1);
+    q=max(q,p);
+    bay=bay+p;
+    H0=H0+p*log(j);
+    if p/q < 1e-20
+        break
+    end
+end
+H0=H0/bay;
+end
+    

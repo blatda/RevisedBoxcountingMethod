@@ -1,0 +1,5 @@
+function H1=SHANNONFIXED(N)
+Ntotal=sum(N);
+n=length(N);
+
+H1=-sum(t);

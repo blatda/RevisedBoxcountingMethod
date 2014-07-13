@@ -1,0 +1,280 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{amssymb,amsmath}
+\usepackage{listings}
+\usepackage[titletoc]{appendix}
+\usepackage{courier}
+
+\linespread{1}
+
+\hoffset -1in \topmargin 0mm \voffset 0mm \headheight 0mm
+\headsep0mm
+\oddsidemargin  20mm     %   Left margin on odd-numbered pages.
+\evensidemargin 20mm     %   Left margin on even-numbered pages.
+\textwidth   170mm       %   Width of text line.
+\textheight  252mm
+
+\makeatletter
+\renewcommand\@openbib@code{%
+     \advance\leftmargin  \z@ %\bibindent
+      \itemindent \z@
+     % Move bibitems close together
+     \parsep -0.8ex
+     }
+\makeatother
+
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\large\bfseries}}
+\makeatother
+
+\makeatletter
+\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalsize\bfseries}}
+\makeatother
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+{\bf \Large REVISITED BOX COUNTING TECHNIQUE IN BAYESIAN SENSE}
+\end{center}
+
+\smallskip
+\begin{center}
+{\large V\'{a}clav Hubata--Vacek $^1$, Jarom\'{i}r Kukal $^1$}
+\end{center}
+
+\smallskip
+\begin{center}
+$^1$CTU in Prague, Faculty of Nuclear Sciences and Physical Engineering\\
+Department of Software Engineering in Economics\\
+B\v{r}ehov\'{a} 7, 115 19 Prague 1 \\
+Czech Republic\\
+hubatvac@fjfi.cvut.cz\\
+ ~\\
+
+\end{center}
+
+\bigskip
+\noindent Abstract: \textit{}
+
+\vspace*{10pt} \noindent Keywords: \textit{unbiased estimation}
+
+
+\bigskip
+\section {Introduction }
+
+\section {Multinomic Distribution and Naive Entropy Estimates}
+
+Multinomic distrubution model plays main role in investigation of point set structures. Let $n \in \mathbb{N}$ be number of distinguish events. Let $p_{j} > 0$ be probability of $j^{\text{th}}$ event for $j = 1,...,n$ satisfying $ \sum_{j=1}^{n} p_{j} =1$. Then random variable $j$ has multinomic distribution $\text{Mul}(p_{1},...,p_{n})$. After realization of multinomic distribution sample of size $N \in \mathbb{N}$, we can count the events and obtain $N_{j} \in \mathbb{N}_{0}$ as number of $j^{\text{th}}$ event occurences for $j=1,...,n$ satisfying $\sum_{j=1}^{n} N_{j} = N$. Therefore, we define number of various events in sample as $K = \sum_{N_{j}>0} 1 \le \text{min}(n,N)$. Remembering Hartley and Shannon entropies definitions as
+\begin{equation} 
+\label{eq:hnula}
+H_{0}=\ln{n},
+\end{equation} 
+\begin{equation} 
+\label{eq:hjedna}
+H_{1}=-\sum_{j=1}^{n} p_{j}\ln{p_{j}},
+\end{equation}   
+we can perform direct but naive estimation of them as
+\begin{equation} 
+\label{eq:hnula}
+H_{0,\mbox{\scriptsize{NAIVE}}}=\ln{K},
+\end{equation} 
+\begin{equation} 
+\label{eq:hjedna}
+H_{1,\mbox{\scriptsize{NAIVE}}}=-\sum_{N_{j}>0} \frac{N_{j}}{N}\ln{\frac{N_{j}}{N}}.
+\end{equation}   
+The main disadvantage of naive estimates is their biasness. Random variable $K= \{ 1,...,n \} $ is upper construined by $n$, then $\text{E}H_{0,\mbox{\scriptsize{NAIVE}}} = \text{E}\ln{K} < \text{E}\ln{n} = \ln{n} = H_{0}$. Therefore, naive estimate of Hartley entropy $H_{0,\mbox{\scriptsize{NAIVE}}}$ is negative biased. On the other hand, traditional Box Counting Technique is based on this estimate because we plot logarithm of covering element number $C(a) \in \mathbb{N}$ against logarithm of covering element size $a > 0$ and then estimate their dependency in linear form $\ln{C(a)} = A_{0} - D_{0,\mbox{\scriptsize{NAIVE}}}\ln{a}$. Recognizing equivalence $C(a) = K$, we obtain $\ln{C(a)} = \ln{K} = H_{0,\mbox{\scriptsize{NAIVE}}}$ and then $H_{0,\mbox{\scriptsize{NAIVE}}} = A_{0} - D_{0,\mbox{\scriptsize{NAIVE}}}\ln{a}$. Defining $D_{0,\mbox{\scriptsize{NAIVE}}}$ as estimate of capacity dimension and recognizing the occurence of $H_{0,\mbox{\scriptsize{NAIVE}}}$ in Box Counting procedure, we are not suprised to be victims of the bias of Hartley entropy estimate.\\ 
+\\*
+Similar situation is the case of Shannon entropy estimation. There are several approaches how to declare the bias of $H_{1,\mbox{\scriptsize{NAIVE}}}$ to be closer to Shannon entropy $H_{1}$. Miller [\ref{bib5}] modified naive estimate $H_{1,\mbox{\scriptsize{NAIVE}}}$ using first order Taylor expansion, which produces
+\begin{equation}
+\label{eq:miller}
+H_{1,\mbox{\scriptsize{M}}}=H_{1,\mbox{\scriptsize{NAIVE}}} + \frac{K-1}{2N}.
+\end{equation}
+Lately, Harris [\ref{bib5}] improved the formula to
+\begin{equation}
+\label{eq:harris1h}
+H_{1,\mbox{\scriptsize{H}}}=H_{1,\mbox{\scriptsize{NAIVE}}} + \frac{K-1}{2N} + \frac{1}{12N^2} \left( 1 - \sum_{p_{j}>0}\frac{1}{p_{j}} \right)
+\end{equation}
+Finally, we can estimate information dimension according to relation
+\begin{equation} 
+\label{eq:hjednaest}
+H_{1,\mbox{\scriptsize{EST}}}=A_{1} - D_{1,\mbox{\scriptsize{EST}}} \ln{a}
+\end{equation} 
+where $H_{1,\mbox{\scriptsize{EST}}}$ is any estimate of $H_{1}$. Therefore, we can also estimate Hausdorf dimension $D_{\mbox{\scriptsize{H}}}$ using inequalities $D_{1} \le D_{\mbox{\scriptsize{H}}} \le D_{0}$ and then also supposing $D_{1,\mbox{\scriptsize{EST}}} \le D_{\mbox{\scriptsize{H}}} \le D_{0,\mbox{\scriptsize{EST}}}$ for any "good" estimates $D_{0,\mbox{\scriptsize{EST}}}$, $D_{1,\mbox{\scriptsize{EST}}}$ of capacity and information dimensions. Next section is oriented to Bayesian estimation of $H_{0}$, $H_{1}$ for $D_{0,\mbox{\scriptsize{EST}}}$ and $D_{1,\mbox{\scriptsize{EST}}}$ evaluations.
+\section {Bayesian Estimation of Hartley Entropy}
+We suppose uniform distribution of random vector $\vec{p} = (p_{1},...,p_{n})$ satisfying  $p_{j} \ge 0$, $\sum_{j=1}^{n} p_{j} = 1$. Using properties of multinomic and Dirichlet distributions, we can calculate density $p(K|n,N)$ of random variable $K \in \mathbb{N}$ for $K \le \min(n,N)$ as 
+\begin{equation} 
+\label{eq:pknn}
+\text{p}(K|n,N) = \text{prob}\left(\sum_{N_{j} > 0}{1}=K \middle| n,\sum_{j=1}^{n}{N_{j}}=N\right) = \frac{{n \choose K}{N-1 \choose K-1}}{{N+n-1 \choose n-1}}.
+\end{equation}
+When $N \ge K+2$, we can calculate 
+\begin{equation} 
+\label{eq:skn}
+S_{K,N} = \sum_{n=K}^{\infty}{p\left(K \middle| n,N\right)}.
+\end{equation}
+Using inequality
+\begin{equation} 
+\label{eq:pknnplus}
+\begin{split}
+\text{p}(K|n,N) = & \frac{N!(N-1)!}{K!(K-1)!(N-K)!} \frac{n!(n-1)!}{(n-K)!(n+N-1)!} = \\ = & \text{q}(K,N) \frac{n(n-1)...(n-k+1)}{(n+N-1)(n+N-2)...n} \le \text{q}(K,N)\frac{n^K}{n^N}
+\end{split}
+\end{equation}
+we can overestimate
+\begin{equation} 
+\label{eq:sknover}
+S_{K,N} \le \sum_{n=K}^{\infty}{\text{q}(K,N)n^{K-N}} = \text{q}(K,N)\sum_{n=K}^{\infty}{n^{K-N}} < +\infty
+\end{equation}
+and then recognize the convergence of infinite series (\ref{eq:sknover}). Having a knowledge of $K,N$ where $N \ge K+2$, we can calculate bayesian density
+\begin{equation} 
+\label{eq:pnkn}
+\text{p}\left(n \middle| K,N \right) = \frac{\text{p}\left(K \middle| n,N\right)}{S_{K,N}}
+\end{equation}
+for $n \ge K$.
+Therefore, Bayesian estimate of Hartley entropy is
+\begin{equation} 
+\label{eq:hnbayes}
+H_{0,\mbox{\scriptsize{BAYES}}} = \text{E}H_{0} = \sum_{n=K}^{\infty}{\text{p}(n|K,N)\ln{n}} > \ln{k}
+\end{equation}
+which is also convergent sum. Substituing $n=K+j$ we obtain equivalent formula
+\begin{equation} 
+\label{eq:hnbayes}
+H_{0,\mbox{\scriptsize{BAYES}}} = \frac{\sum_{j=0}^{\infty}{b_{j}\ln{(K+j)}}}{\sum_{j=0}^{\infty}{b_j}}
+\end{equation}
+where $b_{j}=\frac{{K+j \choose j}{K+j-1 \choose j}}{{K+j+N-1 \choose j}}$.\\
+\\*
+Then 
+\begin{equation} 
+\label{eq:beval}
+\begin{split}
+& b_{0} = 1, \\
+& b_{1} = \frac{(K+1)K}{K+N}, \\
+& b_{2} = \frac{1}{2}\frac{(K+2)(K+1)^2K}{(K+N+1)(K+N)}, \\
+& b_{3} = \frac{1}{6}\frac{(K+3)(K+2)^2(K+1)^2K}{(K+N+2)(K+N+1)(K+N)}, \\
+& b_{4} = \frac{1}{24}\frac{(K+4)(K+3)^2(K+2)^2(K+1)^2K}{(K+N+3)(K+N+2)(K+N+1)(K+N)}.
+\end{split}
+\end{equation}
+Asymptotic properties of Bayesian estimate for $N \rightarrow +\infty$ can be investigated via limits
+\begin{equation} 
+\label{eq:lim}
+\begin{split}
+\lim_{N \rightarrow +\infty} & {H_{0,\mbox{\scriptsize{BAYES}}}} = \ln{K}, \\
+\lim_{N \rightarrow +\infty} & {(H_{0,\mbox{\scriptsize{BAYES}}}-\ln{K})N} = K(K+1)\ln(1+1/K), \\
+\lim_{N \rightarrow +\infty} & {\left(H_{0,\mbox{\scriptsize{BAYES}}}-\ln{K}-\frac{K(K+1)\ln(1+1/K)}{N}\right)N^2} = \\
+& \frac{1}{2}\left(K(K+2)(K+1)\left(\ln(K+2)-\ln(K)-2K\ln(K+1)+K\ln(K+2)+K\ln(K)\right)\right),
+\end{split}
+\end{equation}
+Therefore
+\begin{equation} 
+\label{eq:hroz}
+\begin{split}
+H_{0,\mbox{\scriptsize{BAYES}}} \approx & \ln{K} + \frac{K(K+1)\ln(1+1/K)}{N} + \\ 
+& \frac{\left(K(K+2)(K+1)\left(\ln(K+2)-\ln(K)-2K\ln(K+1)+K\ln(K+2)+K\ln(K)\right)\right)}{2N^2}
+\end{split}
+\end{equation}
+When $K$ is also large, we can roughly approximate Hartley entropy as
+\begin{equation} 
+\label{eq:hartapp}
+H_{0,\mbox{\scriptsize{BAYES}}} \approx \ln{K} + \frac{K+1}{N}
+\end{equation}
+which is very similar to Miller correction [\ref{bib5}] in the case of Shannon entropy estimation.
+\section {Bayesian estimation of Shannon entropy}
+In the case when the number of events $n$ is known, we can perform Bayesian estimation of Shannon entropy as
+\begin{equation} 
+\label{eq:hjednan}
+H_{1,\mbox{\scriptsize{n}}} = \text{E}H_{1}(K=m) = -\sum_{j=1}^{m} \left( \frac{N_{j}+1}{N+m} \left( \psi(N_{j}+2) - \psi(N+m+1) \right) \right)
+\end{equation}
+as derived in [TODO]. But when the number of events $n$ is unkonown, we can use $K$ as lower estimate of $n$ and perform final Bayesian estimation as
+\begin{equation} 
+\label{eq:hjednab}
+H_{1,\mbox{\scriptsize{BAYES}}} = \sum_{n=K}^{\infty}{\text{p}\left(n \middle|K,N \right)H_{1,\mbox{\scriptsize{n}}}}
+\end{equation}
+which is also convergent sum for $N \ge K+2$. Asymptotic properties of (\ref{eq:hjednab}) for $N \rightarrow +\infty$ can be investigated by the same technique as in previous section. Resulting asymptotic formula is
+
+\begin{equation} 
+\label{eq:hjednabas}
+H_{1,\mbox{\scriptsize{BAYES}}} \approx c_{0} + \frac{c_{1}}{N} + \frac{c_{2}}{N^2}
+\end{equation}
+where 
+\begin{equation} 
+\label{eq:cnul}
+\begin{split}
+& c_{0} = \sum_{N_{j}>0}{\frac{N_{j}}{N}\ln{\frac{N}{N_{j}}}}, \\
+& c_{1} = TODO, \\
+& c_{2} = TODO.
+\end{split}
+\end{equation}
+Here $c_{0}$ is naive estimate of Shannon entropy, $c_{1}/N$ corresponds with Miller estimate [TODO] but the term ${c_{2}/N}^2$ differs from Harris estimate [TODO]. The main advantage of formulas TODO,TODO is in absence of theoretical probability knowledge.
+\section {Revisited Box Counting }
+
+\section {Experimental parth }
+
+\section {Conclusion }
+
+
+\vspace*{10pt} \noindent {\bf Acknowledgement:} The paper was created with the support of CTU in Prague, Grant SGS11/165/OHK4/3T/14.
+
+\begin{thebibliography}{99}
+\vskip12pt
+\bibitem{bib1}\label{bib1} todo t.\textit{todo}. todo.
+\bibitem{bib5}\label{bib5} Harris, B., \textit{The statistical estimation of entropy in the non-parametric case}. MRC Technical Summary Report, 1975
+
+
+\end{thebibliography}
+\begin{appendices}
+Let $\mathbb{Q}_{n} = \{ \vec{q} \in (\mathbb{R}_{0}^{+})^{n} | \sum_{j=1}^{n}q_{j} = 1 \}$ be support set for uniform random variable $\vec{p} \in \mathbb{Q}_{n}$. Then for integer $K$ satisfying $1 \le K \le min(n,N)$, the conditional probability is 
+\begin{equation} 
+\label{eq:probpkn}
+\text{p}(K|n,N) = \text{prob}\left(\sum_{j=1}^{n}(N_{j} > 0) = K \middle| n, \sum_{j=1}^{n}N_{j} = N\right).
+\end{equation}
+The vector of $N_{j}$ can be reorganized to begin with positive values. Therefore
+\begin{equation} 
+\label{eq:probbinom}
+\text{p}(K|n,N) = {n \choose K}\text{prob}\left(N_{j} > 0 \Leftrightarrow j \le K \middle| n, \sum_{j=1}^{K}N_{j}=N\right).
+\end{equation}
+Let $\mathbb{D}_{K,N} = \{ \vec{x} \in \mathbb{N}^K | \sum_{j=1}^{K}x_{j} = N \}$ be domain of $\vec{N} = (N_{1},...,N_{K}) \in \mathbb{D}_{K,N}$. Using mean value of multinomic distribution over $\mathbb{Q}_{n}$, we obtain
+\begin{equation} 
+\label{eq:probbinomexp}
+\text{p}(K|n,N) = {n \choose K} \text{E}\left(\sum_{\vec{N} \in \mathbb{D}_{K,N}} {N \choose N_{1},...,N_{K}} \prod_{j=1}^{K}p_{j}^{N_{j}} \prod_{j=k+1}^{n}p_{j}^{0} \right) = {n \choose K} \text{E}\left(\sum_{\vec{N} \in \mathbb{D}_{K,N}} {N \choose N_{1},...,N_{K}} \text{E}\prod_{j=1}^{K}p_{j}^{N_{j}}\right).
+\end{equation}
+Using generalized Beta function
+\begin{equation} 
+\label{eq:betafce}
+B(\vec{x}) = \int_{\vec{p} \in \mathbb{Q}_{m}} \prod_{j=1}^{m} p_{j}^{x_{j}-1} d\vec{p} = \frac{\prod_{j=1}^{m} \Gamma(x_{j})}{\Gamma(\sum_{j=1}^{m}x_{j})},
+\end{equation}
+we can calculate
+\begin{equation} 
+\label{eq:expprod}
+\text{E}(\prod_{j=1}^{K}p_{j}^{N_{j}}) = \frac{\int_{\vec{p} \in \mathbb{Q}_{n}} \prod_{j=1}^{K} p_{j}^{N_{j}} d\vec{p}}{\int_{\vec{p} \in \mathbb{Q}_{n}} d\vec{p}} = \frac{\prod_{j=1}^{K}\Gamma(N_{j}+1)}{\Gamma(N+n)}
+\end{equation}
+Therefore
+\begin{equation} 
+\label{eq:prob}
+\text{prob}(K|n,N) = {n \choose K}\sum_{\vec{N} \in \mathbb{D}_{K,N}} \frac{N!(n-1)!}{\prod_{j=1}^{K}N_{j}!}\frac{\prod_{j=1}^{K}N_{j}!}{(N+n-1)!} = {n \choose K}\sum_{\vec{N} \in \mathbb{D}_{K,N}} \frac{N!(n-1)!}{(N+n-1)!} = \frac{{n \choose K}\text{card}(\mathbb{D}_{K,N})}{{N+n-1 \choose n-1}}.
+\end{equation}
+The last question is about the cardinality of $\mathbb{D}_{k,N}$, which corresponds with number of possibilities, how to place $N$ balls into $k$ boxes under assumptions that no box is empty and the balls are identic. We place $k$ balls into $k$ different boxes in the first phase. The rest of $N-k$ balls can be distributed without anz constrains. Therefore
+\begin{equation} 
+\label{eq:card}
+\text{card}(\mathbb{D}_{K,n}) = {(N-K)+K-1 \choose K-1} = {N-1 \choose K-1}. 
+\end{equation}
+Resulting formula is (\ref{eq:pknn}).
+
+\normalfont
+\section {Hash function}
+\ttfamily
+\begin{lstlisting}
+function 
+\end{lstlisting}
+
+\end{appendices}
+
+\end{document}

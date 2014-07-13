@@ -1,0 +1,14 @@
+\bibitem{bib1}\label{bib1} Benjamini Y., Hochberg Y., \textit{Multiple hypotheses testing with weights}. Scandinavian Journal of Statistics, 24 407-418.
+\bibitem{bib2}\label{bib2} Miller G., \textit{Note on the bias of information estimates}. Information Theory in Psychology: Problems and Methods, pp. 95-100 (1955).
+\bibitem{bib3}\label{bib3} Bandt C., Pompe B., \textit{Permutation Entropy: A Natural Complexity Measure for Time Series}. Physical Review Letterss, 88, 174102 (2002).
+\bibitem{bib4}\label{bib4} Cao Y., Tung W., Gao J. B., Protopopescu V. A., Hively L. M., \textit{Detecting dynamical changes in time series using the permutation entropy}. Physical review E 70, 046217 (2004).
+\bibitem{bib5}\label{bib5} Shannon C. E., \textit{A mathematical theory of communication}. Bell System Technical Journal (1948)
+\bibitem{bib6}\label{bib6} Knuth D. E., \textit{Art of Programming}. Volume 3: Sorting and Searching, Addison-Wesley, Reading (1998).
+
+\bibitem{bib7}\label{bib7} Pincus S. M., \textit{Approximate entropy as a measure of system complexity}. Proc. Nati. Acad. Sci. USA, Vol. 88, pp. 2297-2301 (March 1991).
+\bibitem{bib8}\label{bib8} Ab\'{a}solo D., Hornero R., Espino P., \textit{Approximate Entropy of EEG Background Activity in Alzheimer's Disease Patients}. Intelligent Automation and Soft Computing, Vol. 15, No. 4, pp. 591-603 (2009).
+\bibitem{bib9}\label{bib9} Bock T. D., Das S., Mohsin M., Munro N. B., Hively L. M., Jiang Y., Smith C. D., Wekstein D. R., Jicha G. A., Lawson A., Lianekhammy J., Walsh E., Kiser S., Black Ch., \textit{Early Detection of Alzheimer’s Disease Using Nonlinear Analysis of EEG via Tsallis Entropy}.
+\bibitem{bib10}\label{bib10} Wu L., Neskovic P., Reyes E., Festa E., Heindel W., \textit{Classifying n-back EEG data using entropy and mutual information features}. 
+\bibitem{bib11}\label{bib11} Tang S., Jiang X., Liu Z., Ma L., Zhang Z., Zheng Z., \textit{Entropy Analysis in Interacting Diffusion Systems on Complex Networks}. International Journal of Mathematics and Computers in Simulation, ISSN: 1998-0159 (2012).
+\bibitem{bib12}\label{bib12} Morabito F. C., Labate D., Foresta F. L., Bramanti A., Morabito G., Palamara I., \textit{Multivariate Multi-Scale Permutation Entropy for Complexity Analysis of Alzheimer’s Disease EEG}. ISSN 1099-4300, 14, 1186-1202; doi:10.3390/e14071186 (2012).
+\bibitem{bib13}\label{bib13} Jeong-Hyeon Park, Sooyong Kim, Cheol-Hyun Kim, Andrzej Cichocki, Kyungsik Kim, \textit{Multiscale entropy analysis of EEG from patients under different Pathological Conditions}. Fractals, Vol. 15, No. 4 399–404 (2007).

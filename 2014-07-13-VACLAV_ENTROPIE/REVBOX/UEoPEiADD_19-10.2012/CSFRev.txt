@@ -1,0 +1,106 @@
+Ms. Ref. No.: CHAOS-D-13-00086
+Title: UNBIASED ESTIMATION OF PERMUTATION ENTROPY IN ALZHEIMER'S DISEASE DIAGNOSIS FROM EEG
+Chaos, Solitons & Fractals
+
+Dear Mr. Václav Hubata-Vacek,
+
+The reviewers have commented on your above paper. They indicated that it is not acceptable for publication in its present form.
+
+However, if you feel that you can suitably address the reviewers' comments (included below), I invite you to revise and resubmit your manuscript.
+
+Please carefully address the issues raised in the comments.
+
+If you are submitting a revised manuscript, please also:
+
+a) outline each change made (point by point) as raised in the reviewer comments
+
+AND/OR
+
+b) provide a suitable rebuttal to each reviewer comment not addressed
+
+
+To submit your revision, please do the following:
+
+1. Go to: http://ees.elsevier.com/chaos/
+
+2. Enter your login details
+
+3. Click [Author Login]
+This takes you to the Author Main Menu.
+
+4. Click [Submissions Needing Revision]
+I look forward to receiving your revised manuscript.
+
+Yours sincerely,
+
+Paolo Grigolini, Ph. D
+Editor-in-Chief
+Chaos, Solitons & Fractals
+
+Reviewers' comments:
+
+Reviewer #1: Review on
+"Unbiased Estimation of Permutation Entropy in
+Alzheimer's Disease Diagnosis from EEG"
+by Václav Hubata-Vacek, Jaromír Kukal, Lucie Tylová, Oldrich Vysata
+
+
+The authors apply the well-established concept of permutation entropy (Bandt and Pompe, 2002) to multi-channel electroencephalographic data (surface EEGs) for an early diagnosis of Alzheimer's disease. Since the "naive" estimator tends to underestimate the entropy, they apply Miller's correction (G. Miller, 1955) to obtain an "unbiased" estimator of the entropy.
+They propose an algorithm for the determination of ordinal patterns, which uses look-up tables for the handling of large sample patterns and they provide some estimators for its efficiency.
+A very short part of the manuscript is devoted to the main objective of the study (see article title), which is "Alzheimer's disease diagnosis from EEG".
+By means of multiple-hypotheses testing (according to Benjamini and Hochberg, 1997) they find highly significant differences in terms of the "false discovery rate" (FDR) between Alzheimer diseased persons and a healthy control group.
+The conclusion considers mainly technical recommendations, addressing the bias correction and the sample pattern length.
+
+
+The methodological approach in terms of the representation of time series by ordinal patterns and the use of permutation entropy is topical. To investigate Alzheimer's disease within this framework is straightforward and of wide interest, not only from a medical point of view but also for methodological reasons.
+Unfortunately, in my opinion the manuscript does not contribute substantial new insights to any of these matters. Moreover, a number of statements are not really proven in the framework of the manuscript. I have serious problems with the presupposition in the context of the algorithmic part. My most serious concern, however, is the use of large sample patterns.
+Necessary informations concerning details of the study design, inclusion/exclusion criteria of patients and volunteers, and data pre-processing steps are missing.
+A more detailed list of my criticism is given below.
+
+In the present form, the manuscript is not suitable for publication in Chaos, Solitons & Fractals.
+I think, a great effort of computational work and substantial revision is necessary to meet the standards and subjects of the journal.
+
+My major concerns are the following:
+
+1. Embedding dimension w: There is wide consensus that for statistical reasons the ratio between realized symbols (~length of the time series) and the cardinality of the set of possible order patterns should be significantly larger than 1. This cardinality is given by w!, where w is the length of the order pattern (the embedding dimension, or the window size). The authors recommend "w=14", which results in a number 14! ? 8.7x10^(10) possible order patterns. Taking the length n of the sampled time series (70000-120000 samples, as noted in section 4), the above-mentioned ratio is approximately 10^(-7). As a consequence the set of actually realized ordinal patterns is supposed to be mostly subject to noise.
+This assumption is in good agreement with the correction of the "naive entropy" by Miller's approach (G. Miller, 1955), as can be derived by comparison of table 1 and table 2 of the manuscript. The differences of the corresponding entries (entropies) are (almost independent of the population AD/CN) close to 0.5, indicating a ratio kn/n>0.9. This implies that most of the ordinal patterns appear exactly once and the statistical result is based on a very few numbers of generated order patterns (see also the estimates of the entropies). This substantiates my objection to the proposed length w of order patterns.
+
+2. Investigated parameter set: The authors recommend in the conclusion to choose "pattern length w=14 . to achieve best separation". This statement, however, is not proved by any reported results of their study, for instance, in terms of documented parameter scans.
+The time-horizon <DELTA>t of the order pattern is not only given by the embedding dimension w but also by the delay time <tau> used for the construction of the corresponding "delay vector": <DELTA>t=(w-1) <tau>. The appropriate choice of embedding parameters depends on characteristics of the underlying signal, e.g. in terms of the dominant frequencies or the nature and magnitude of noise (see, for instance, the cited paper of Morabito et al., 2012). Unfortunately, the authors do not at all discuss these aspects. This lack is even more serious, if they recommend "w=14".
+
+3. "Algorithmic aspects": The authors claim that the necessary memory "enables permutation analysis only for w<13 on a typical computer". This statement may hold if one uses look-up tables for the determination of order patterns. To my knowledge, this is not a procedure proposed in the original paper by Bandt and Pompe (2002). Moreover I know of many other methods in use to determine ordinal patterns, for which the accessible memory is not the limiting factor. Based on the presented performance properties it is difficult to decide, whether the proposed algorithm promises a significant reduction of computing time under special conditions. I don't doubt that the proposed algorithm is sophisticated from the point of view of a computer scientist.
+
+4. "Medical/ experimental aspects": The article title and abstract, as well as the introduction, emphasize the diagnosis of Alzheimer's disease from EEGs as a major objective of the study. In contrast to this, the description of the study design and technical aspects is poor and lacks a lot of necessary information. This concerns in particular technical aspects of the data acquisition, data pre-processing and information of the study collectives (AD patients and volunteers/ "healthy patients"), e.g.:
+
+o The scheme of electrode placement is not defined. The number of 19 scalp electrodes suggests the use of the international 10-20 system. However, the statement "the differences are significant only in frontal channels ch=1..17" hardly agrees with this assumption.
+o The authors say nothing about necessary pre-processing of the data (filtering, artefact removal and suppression, reference electrode).
+o The populations "AD patients" and the control "healthy patients" are not characterized (e.g. by age-distribution, degree of disorder, etc).
+It is important to explain, whether "control CN" (called "healthy patients (!)") is formed by volunteers or by patients suffering from other underlying disease(s) than Alzheimer's disease?
+o Is the control group CN age-matched to the AD group?
+o The authors' aim is to investigate "the potential of complexity analysis of multidimensional EEG as indicator of AD onset through permutation entropic modeling". However, the group of AD patients is not classified according to the stage of Alzheimer's disease, to the symptomatic, and to the clinical assessment. (Beside this, I don't understand the meaning of "entropic modelling" in this context.)
+
+5. Statistics: The use of Multiple-Hypotheses Testing (according to Benjamini and Hochberg, 1997) and bias reduction by Miller's correction (Miller 1955, based on Taylor expansion) are interesting. However, the reported results challenge some question and remarks:
+
+* I have some problems to follow the interpretation of table 1 and table 2, regarding <alpha>FDR and in particular with the conclusion to recommend the use of Miller's correction based on statistical arguments.
+* The result of Miller's correction (close to 0.5 for both population, see above [item 1]) requires a discussion from the authors. (The corrections are, as expected by the above given arguments, very similar for both groups.)
+* Many studies have shown that AD "slows down" the EEG, i.e. one observes increased power in the delta- and theta-bands (see for references e.g. Dauwels et al., Diagnosis of Alzheimer's Disease from EEG signals: Where are we standing?, Curr Alzheimer Res. 2010 Sep;7(6):487-505.) The authors also give some indication for those findings in the introduction. I miss very much a discussion of previous findings in this context and a comparison of the reported results with standard EEG methods (e.g. Fourier transform based methods). In my opinion the observed discrimination can be mostly explained by the known increase of power in the low frequency range. This is supported by reading figure 2 (top ten frequent permutation) and again raises the question regarding the pattern length w.
+
+Further remarks are:
+
+* Figure 2 and figure 3 are not mentioned at all in the text body.
+* Moreover, the figure captions are rather poor. Thus, the reader has to decipher the information content by his own.
+* I was not able to match the numbers of table 1 and table 2 with the box-plots shown in figure 3. (I wonder if this is possible.)
+* The figures themselves are not very well prepared. For instance, due to the chosen uniform style of lines and symbols, it is impossible to distinguish some of the "top 10 frequent permutations" (order patterns) displayed in figure 2.
+* Some of the important statements in particular in the introduction are unreferenced.
+
+Because I do not recommend a publication of the manuscript in the present form and a very substantial revision is required, I have omitted to suggest specific editorial corrections (typos, reference style, etc.).
+
+
+
+
+
+
+Reviewer #2: The aim of the manuscript is very interesting but needs at least one major revision. The authors plan to use permutation entropy (PE) as diagnosis tool. I find the work still poor as it is. In my opinion the authors don't describe correctly the PE. They use a large embedding dimension (D=14) for series of length (N) 20000 to 120000 points. However, it is well known that the number of points must satisfy N>>D! which is clearly not the case here. Due to this reason, many patterns do not appear and the results are, at least, questionable. To give convincing results they should use smaller embedding dimensions (D=4, 5, 6 or 7 at most). What would happen in this case?
+Figures 2 and 3 are not described in the text.
+
+
