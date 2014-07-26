@@ -40,3 +40,9 @@ Icon
 # Matlab Autosave files
 # =========================
 *.asv
+
+# =========================
+# Tex usesless files
+# =========================
+*.log
+revbox.pdf
