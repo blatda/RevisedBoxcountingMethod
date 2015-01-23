@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.17)  26 JUL 2014 16:21
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.17)  23 JAN 2015 09:41
 entering extended mode
 **revbox.tex
 
-(C:\Users\David\Documents\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedBoxc
-ounting\revbox.tex
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -181,8 +181,8 @@ Package `subfloat', Version 2.14 of 2003/08/21.
 \c@subfloattablemax=\count112
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\here.sty")
-(C:\Users\David\Documents\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedBoxc
-ounting\revbox.aux)
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
@@ -224,159 +224,105 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 55.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [1
+)
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox_01_Introduction.tex")
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox_02_NaiveEst.tex" [1
 
-{C:/Users/David/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/Users/David/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox_03_BayesEstHartley.tex"
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 126.
+(amsmath)                 on input line 5.
 
-[2] [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 239.
 
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+LaTeX Warning: Reference `subsec:app2' on page 2 undefined on input line 17.
+
+[2])
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox_04_BayesEstShannon.tex")
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox_05_RevisedBoxCounting.tex" [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 239.
- [4]
-Overfull \hbox (12.58704pt too wide) in paragraph at lines 321--322
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
+)
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox_06_ExpPart.tex" [4])
+Overfull \hbox (12.58704pt too wide) in paragraph at lines 92--93
 \OT1/cmr/bx/n/10 Acknowledgement: \OT1/cmr/m/n/10 The pa-per was cre-ated with 
 the sup-port of CTU in Prague, Grant SGS11/165/OHK4/3T/14. 
  []
 
-<images5/frac32i.pdf, id=29, 385.44pt x 305.14pt>
-File: images5/frac32i.pdf Graphic file (type pdf)
- <use images5/frac32i.pdf>
-Package pdftex.def Info: images5/frac32i.pdf used on input line 332.
-(pdftex.def)             Requested size: 193.47577pt x 153.16559pt.
 
-<images5/frac43i.pdf, id=30, 385.44pt x 305.14pt>
-File: images5/frac43i.pdf Graphic file (type pdf)
- <use images5/frac43i.pdf>
-Package pdftex.def Info: images5/frac43i.pdf used on input line 333.
-(pdftex.def)             Requested size: 193.47577pt x 153.16559pt.
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox_bibliography.tex") [5]
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox_app_derivation.tex"
+Overfull \hbox (19.57452pt too wide) detected at line 32
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 K \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 n; N\
+OT1/cmr/m/n/10 ) = [] [] [][][] = [][] [] [] []
+ []
 
-<images5/frac53i.pdf, id=31, 385.44pt x 305.14pt>
-File: images5/frac53i.pdf Graphic file (type pdf)
- <use images5/frac53i.pdf>
-Package pdftex.def Info: images5/frac53i.pdf used on input line 334.
-(pdftex.def)             Requested size: 193.47577pt x 153.16559pt.
-
-<images5/frac83i.pdf, id=32, 385.44pt x 305.14pt>
-File: images5/frac83i.pdf Graphic file (type pdf)
- <use images5/frac83i.pdf>
-Package pdftex.def Info: images5/frac83i.pdf used on input line 335.
-(pdftex.def)             Requested size: 193.47577pt x 153.16559pt.
-
-[5] <images4/frac32si.pdf, id=37, 369.38pt x 289.08pt>
-File: images4/frac32si.pdf Graphic file (type pdf)
-
-<use images4/frac32si.pdf>
-Package pdftex.def Info: images4/frac32si.pdf used on input line 345.
-(pdftex.def)             Requested size: 193.47577pt x 151.41638pt.
- <images4/frac43si.pdf, id=38, 369.38pt x 289.08pt>
-File: images4/frac43si.pdf Graphic file (type pdf)
-
-<use images4/frac43si.pdf>
-Package pdftex.def Info: images4/frac43si.pdf used on input line 346.
-(pdftex.def)             Requested size: 193.47577pt x 151.41638pt.
- <images4/frac53si.pdf, id=39, 369.38pt x 289.08pt>
-File: images4/frac53si.pdf Graphic file (type pdf)
-
-<use images4/frac53si.pdf>
-Package pdftex.def Info: images4/frac53si.pdf used on input line 347.
-(pdftex.def)             Requested size: 193.47577pt x 151.41638pt.
- <images4/frac83si.pdf, id=40, 369.38pt x 289.08pt>
-File: images4/frac83si.pdf Graphic file (type pdf)
-
-<use images4/frac83si.pdf>
-Package pdftex.def Info: images4/frac83si.pdf used on input line 348.
-(pdftex.def)             Requested size: 193.47577pt x 151.41638pt.
- [6 <C:/Users/David/Documents/_Vyzkum/RevisedBoxcountingMethod/papers/Revisited
-Boxcounting/images5/frac32i.pdf> <C:/Users/David/Documents/_Vyzkum/RevisedBoxco
-untingMethod/papers/RevisitedBoxcounting/images5/frac43i.pdf
-
-pdfTeX warning: pdflatex (file C:/Users/David/Documents/_Vyzkum/RevisedBoxcount
-ingMethod/papers/RevisitedBoxcounting/images5/frac43i.pdf): PDF inclusion: mult
-iple pdfs with page group included in a single page
-> <C:/Users/David/Documents/_Vyzkum/RevisedBoxcountingMethod/papers/RevisitedBo
-xcounting/images5/frac53i.pdf
-
-pdfTeX warning: pdflatex (file C:/Users/David/Documents/_Vyzkum/RevisedBoxcount
-ingMethod/papers/RevisitedBoxcounting/images5/frac53i.pdf): PDF inclusion: mult
-iple pdfs with page group included in a single page
-> <C:/Users/David/Documents/_Vyzkum/RevisedBoxcountingMethod/papers/RevisitedBo
-xcounting/images5/frac83i.pdf
-
-pdfTeX warning: pdflatex (file C:/Users/David/Documents/_Vyzkum/RevisedBoxcount
-ingMethod/papers/RevisitedBoxcounting/images5/frac83i.pdf): PDF inclusion: mult
-iple pdfs with page group included in a single page
-> <C:/Users/David/Documents/_Vyzkum/RevisedBoxcountingMethod/papers/RevisitedBo
-xcounting/images4/frac32si.pdf
-
-pdfTeX warning: pdflatex (file C:/Users/David/Documents/_Vyzkum/RevisedBoxcount
-ingMethod/papers/RevisitedBoxcounting/images4/frac32si.pdf): PDF inclusion: mul
-tiple pdfs with page group included in a single page
-> <C:/Users/David/Documents/_Vyzkum/RevisedBoxcountingMethod/papers/RevisitedBo
-xcounting/images4/frac43si.pdf
-
-pdfTeX warning: pdflatex (file C:/Users/David/Documents/_Vyzkum/RevisedBoxcount
-ingMethod/papers/RevisitedBoxcounting/images4/frac43si.pdf): PDF inclusion: mul
-tiple pdfs with page group included in a single page
-> <C:/Users/David/Documents/_Vyzkum/RevisedBoxcountingMethod/papers/RevisitedBo
-xcounting/images4/frac53si.pdf
-
-pdfTeX warning: pdflatex (file C:/Users/David/Documents/_Vyzkum/RevisedBoxcount
-ingMethod/papers/RevisitedBoxcounting/images4/frac53si.pdf): PDF inclusion: mul
-tiple pdfs with page group included in a single page
-> <C:/Users/David/Documents/_Vyzkum/RevisedBoxcountingMethod/papers/RevisitedBo
-xcounting/images4/frac83si.pdf
-
-pdfTeX warning: pdflatex (file C:/Users/David/Documents/_Vyzkum/RevisedBoxcount
-ingMethod/papers/RevisitedBoxcounting/images4/frac83si.pdf): PDF inclusion: mul
-tiple pdfs with page group included in a single page
->] [7] [8]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 593.
-
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-[9] [10] [11]
-(C:\Users\David\Documents\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedBoxc
-ounting\revbox.aux) ) 
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox_app_proofs.tex" [6])
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox_code.tex"
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 4.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [7] [8])
+[9]
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox.aux")
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3552 strings out of 493921
- 48490 string characters out of 3144876
- 122792 words of memory out of 3000000
- 6793 multiletter control sequences out of 15000+200000
+ 3543 strings out of 493921
+ 50141 string characters out of 3144876
+ 122845 words of memory out of 3000000
+ 6764 multiletter control sequences out of 15000+200000
  13022 words of font info for 54 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,19n,32p,1108b,1440s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontnam
-e/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
-10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on revbox.pdf (11 pages, 462802 bytes).
+ 27i,20n,32p,1187b,1442s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/symbols/msbm7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
+rw/courier/ucrr8a.pfb>
+Output written on revbox.pdf (9 pages, 265987 bytes).
 PDF statistics:
- 675 PDF objects out of 1000 (max. 8388607)
+ 113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
