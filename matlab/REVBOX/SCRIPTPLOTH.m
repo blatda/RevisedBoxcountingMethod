@@ -1,13 +1,14 @@
 % SCRIPTPLOTH
 
-[ X, dim ] = FRAC43( 7 );
+
+[ X, dim ] = FRAC43(7);
 %[ X, dim ] = FRAC32( 11 );
 %[ X, dim ] = FRAC53( 7 );
 %[ X, dim ] = FRAC83( 7 ); %koberec
 
 X = X(2:end-1,2:end-1);
 
-%A = 2:30;
+A = 2:30;
 %A = 20:1:28;
 %A = 10:1.7:50;
 
@@ -16,7 +17,7 @@ X = X(2:end-1,2:end-1);
 
 
 %A = 10:2:250; <= this
-A = 10:50:250;
+%A = 10:50:250;
 
 %A = 10:0.7:22;
 
@@ -29,7 +30,6 @@ en = 5; % entropy number
 
 rn = 10; % random number
 RN = MYRANDNUMS(rn);
-
 
 R = zeros(rn, en);
 
@@ -50,21 +50,21 @@ for i=1:length(A)
     end
     
     for j=1:rn
-        Y = RANDROTTRAN( X, RN(j,1), RN(j,2), RN(j,3) );
+        Y = RANDROTTRAN( X, RN(j,1)*2*pi, RN(j,2), RN(j,3) );
         [ counter ] = BOXCOUNTPIX2( Y, A(i));
         k = size(counter,1);
         N = sum(counter);
         R(j,1) = log(k);
-        R(j,2) = log(k) + (k*(k+1)*log(1+1/k))/N;
-        R(j,3) = log(k) + (k*(k+1)*log(1+1/k))/N + (1/2)*(k*(k+2)*(k+1)*(log(k+2)-log(k)-2*k*log(k+1)+k*log(k+2)+k*log(k)))/N^2;
-        R(j,4) = log(k) + log(N/(N-k)); 
-        R(j,5) = HARTLEYBAYES(N,k);
+        R(j,2) = R(j,1) + k*(k+1)*log(1+1/k)/N;
+        R(j,3) = R(j,2) + (1/2)*(k*(k+2)*(k+1)*(log(k+2)-log(k)-2*k*log(k+1)+k*log(k+2)+k*log(k)))/N^2;
+        R(j,4) = log(k) + log(N/(N-k));
+        R(j,5) = HARTLEYBAYES(counter,1);
     end
-    H1(:,i) = R(:,1); 
-    H2(:,i) = R(:,2); 
-    H3(:,i) = R(:,3); 
-    H4(:,i) = R(:,4); 
-    H5(:,i) = R(:,5); 
+    H1(:,i) = R(:,1);
+    H2(:,i) = R(:,2);
+    H3(:,i) = R(:,3);
+    H4(:,i) = R(:,4);
+    H5(:,i) = R(:,5);
     
     H(i,1) = mean(R(:,1));
     H(i,2) = mean(R(:,2));
@@ -77,7 +77,7 @@ disp(dim);
 hold on
 cmap = hsv(en+1);
 cmap = cmap([1,3:end],:);
-for i = [1, en] %1:en
+for i = 1:en % [1, en] %
   plot(log(A),H(:,i),'-','Color',cmap(i,:));
   [ aa, bb ] = MNCLIN( log(A), H(:,i)' );
   disp(-aa);
@@ -137,5 +137,3 @@ hold off
 
 %EXPLORE(H(:,[1, 5]), A, 2, dim )
 %EXPLORE(H(:,[1, 5]), A, 10, dim )
-
-

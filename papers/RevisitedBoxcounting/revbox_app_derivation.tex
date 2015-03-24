@@ -1,4 +1,4 @@
-\subsection {Derivation of $\hat{\mathrm{p}}(K|n,N)$ for Hartley Entropy}
+\subsection {Derivation of $\hat{\mathrm{p}}(K|n,N)$ in (\ref{eq:pknn})}
 \label{subsec:app1}
 Let $\mathbb{Q}_{n} = \{ \vec{q} \in (\mathbb{R}_{0}^{+})^{n} | \sum_{j=1}^{n}q_{j} = 1 \}$ be a support set of a Dirichlet-distributed random variable $\vec{p} \in \mathbb{Q}_{n}$ with parameters $\alpha_j$, for $j = 1,...,n$. The conditional probability of an~integer $K$ satisfying $1 \le K \le \min(n,N)$ is 
 \begin{equation} 
@@ -35,3 +35,39 @@ In this particular paper, we assume $\alpha_j = \alpha^{*}, \forall j = 1,...,n$
 \label{eq:probRes}
 \mathrm{\hat{p}}(K \: | \: n,N) = {n \choose K} \frac{\Gamma({N+1}) \Gamma(n\alpha^{*})}{\Gamma(N+n\alpha^{*})} \sum_{\vec{N} \in \mathbb{D}_{K,N}} \prod_{j=1}^{K} \frac{ \Gamma(N_{j} + \alpha^{*})}{ \Gamma(N_j+1) \Gamma(\alpha^{*})}
 \end{equation}
+
+\subsection {Convergence of $\sum_{j=0}^{\infty}{b_j \mathrm{ln}(K+j)} $ in (\ref{eq:hnbayesb}) and $\sum_{j=0}^{\infty}{b_j}$ in (\ref{eq:skn}) }
+\label{subsec:conv}
+
+The ratio of coefficients $b_j$ could be expressed as:
+
+\begin{equation}
+q_j = \frac{b_{j}}{b_{j-1}}\frac{\ln(K+j)}{\ln(K+j-1)}  = \frac{(K+j)}{j}\frac{\ln(K+j)}{\ln(K+j-1)} \frac{\Gamma{((K+j)\alpha^{*})}}{\Gamma{((K+j-1)\alpha^{*}})}\frac{\Gamma{(N+(K+j-1)\alpha^{*})}}{\Gamma({N+(K+j)\alpha^{*})}}.
+\end{equation}
+Starting with inequality proved by Wendel [\ref{bib:Wendel}]:
+\begin{equation}
+\forall \Delta \in \langle0;1\rangle, \forall x > 0: \frac{ \Gamma(x + \Delta)}{\Gamma(x)} \leq x^{\Delta},
+\end{equation}
+we should realize that $\alpha^{*} \in \langle0;1\rangle$ and than see the similarity leading to
+\begin{equation}
+q_j = \frac{b_j}{b_{j-1}} \frac{\ln(K+j)}{\ln(K+j-1)} \leq  \frac{K+j}{j}\frac{\ln(K+j)}{\ln(K+j-1)} {\left( \frac{(K+j-1)\alpha^*}{(K+j-1)\alpha^* + N} \right)}^{\alpha^{*}}
+\end{equation}
+The Raabe criterion [\ref{bib:Raabe}] states series of positive members $\sum_{n=0}^{\infty} a_n$ as convergent if exists $L = \lim_{n \to \infty} n \left(\frac{a_n}{a_{n+1}}-1 \right)$ satisfying $L>1$. Then we can calculate
+
+\begin{equation}
+L = \lim_{j \to \infty} j \left( \frac{b_{j-1}}{b_{j}} \frac{\ln(K+j-1)}{\ln(K+j)}   - 1   \right) \geq \lim_{j \to \infty} j \left( \frac{j}{K+j} \frac{\ln(K+j-1)}{\ln(K+j)} {\left( \frac{(K+j-1)\alpha^* + N}{(K+j-1)\alpha^* } \right)}^{\alpha^{*}} - 1   \right).
+\end{equation}
+Substitution $x=K+j$ leads to
+\begin{equation}
+L = \lim_{x \to \infty} (x-K)  \left( \frac{x-K}{x} \frac{\ln(x-1)}{\ln(x)} {\left( \frac{(x-1)\alpha^* + N}{(x-1)\alpha^*} \right)}^{\alpha^{*}} - 1   \right)
+\end{equation}
+and finally
+\begin{equation}
+L = -K + \lim_{x \to \infty} \left( x{\left( 1 + \frac{N-\alpha^{*}}{x\alpha^{*}} \right)}^{\alpha^{*}} -x{\left( 1 - \frac{1}{x} \right)}^{\alpha^{*}} \right)
+\end{equation}
+Substituting $h = x^{-1} \to 0^{+}$ and applying l'Hospital rule we obtain
+\begin{equation}
+L = -K + \lim_{h \to 0^{+}} \frac{ \left( 1+\frac{N-\alpha^{*}}{\alpha^{*}}h \right)^{\alpha^{*}} - {(1-h)}^{\alpha^{*}}}{h}  = N-K
+\end{equation}
+Thus the series $\sum_{j=0}^{\infty}{b_j \mathrm{ln}(K+j)} $ absolutely converges for  $K \leq N-2$ because $L = N-K > 1$.
+According to majority rule, the series $\sum_{j=0}^{\infty}{b_j} = \sum_{n=K}^{\infty}{\mathrm{\hat{p}}\left(K \: \middle| \: n,N\right)}$ converges as well.

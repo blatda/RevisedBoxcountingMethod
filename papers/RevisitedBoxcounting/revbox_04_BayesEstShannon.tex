@@ -2,18 +2,18 @@
 In the case when the number of events $n$ is known, we can perform Bayesian estimation of Shannon entropy as
 \begin{equation} 
 \label{eq:hjednan}
-\hat{H}_{1,\mbox{\scriptsize{n}}} = \text{E}H_{1}(K=n) = -\sum_{j=1}^{n} \left( \frac{N_{j}+1}{N+n} \left( \psi(N_{j}+2) - \psi(N+n+1) \right) \right)
+\hat{H}_{1,\scriptsize{n}} = \text{E}H_{1}(K=n) = -\sum_{j=1}^{n} \left( \frac{N_{j}+1}{N+n} \left( \psi(N_{j}+2) - \psi(N+n+1) \right) \right)
 \end{equation}
-where $\psi$ is digamma function. But when the number of events $n$ is unkonown, we can use $K$ as lower estimate of $n$ and perform final Bayesian estimation as
+where $\psi$ is digamma function. But when the number of events $n$ is unknown, we can use $K$ as lower estimate of $n$ and perform final Bayesian estimation as
 \begin{equation} 
 \label{eq:hjednab}
-H_{1,\mbox{\scriptsize{Bayes}}} = \sum_{n=K}^{\infty}{\text{p}\left(n \: \middle| \:K,N \right)H_{1,\mbox{\scriptsize{n}}}}
+\hat{H}_{1,\mbox{\scriptsize{Bayes}}} = \sum_{n=K}^{\infty}{\text{p}\left(n \: \middle| \:K,N \right)\hat{H}_{1,\scriptsize{n}}}
 \end{equation}
 which is also convergent sum for $N \ge K+2$. \\
 \\*
-Substituing $n=K+j$ we obtain adequating formula.
+Substituting $n=K+j$ we obtain adequate formula.
 \begin{equation} 
 \label{eq:hjbb}
 \hat{H}_{1,\mbox{\scriptsize{Bayes}}} = \frac{\sum_{j=0}^{\infty}b_{j}H_{1,K+j}}{\sum_{j=0}^{\infty}b_{j}}
 \end{equation}
-Asymptotic expansion of (\ref{eq:hjbb}) unfortunately depends on individual frequences $N_{j}$.
+Unfortunately asymptotic expansion of (\ref{eq:hjbb}) depends on individual frequencies $N_{j}$. But $\hat{H}_{1,n} \leq \ln{n}$ and therefore $\hat{H}_{1,K+j} \leq \ln{K+j}$ which implies the convergence of $\sum_{j=0}^{\infty}b_{j}H_{1,K+j}$ according to majority rule and (\ref{eq:hnbayesb}).

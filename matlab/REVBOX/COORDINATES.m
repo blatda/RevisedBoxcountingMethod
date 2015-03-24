@@ -1,8 +1,6 @@
 function [X] = COORDINATES(dB)
 
-n = sum(size(dB)>1); %zjisteni dimenze
-
-switch n
+switch ndims(dB) %number of dimensions
     case 1
         X = find(dB);
     case 2

@@ -3,20 +3,22 @@ function [ RT ] = RANDROTTRAN( X, alpha, movex, movey )
 % X .. [n, 2]
 
 if nargin==1 
-    alpha = rand(1)*2*pi;
-    movex = rand(1);
-    movey = rand(1);
+    alpha = rand*2*pi;
+    movex = rand;
+    movey = rand;
 end
 
-s = sin(alpha);
-c = cos(alpha);
+%change to homogenous coordinates
+X = [X, ones(length(X),1)]';
 
-RT = zeros(size(X,1), 2);
+%transform matrix
+T = [cos(alpha) -sin(alpha) movex; sin(alpha) cos(alpha) movey; 0 0 1];
 
-for i=1:size(X,1)
-    RT(i,1) = X(i,1)*c - X(i,2)*s;
-    RT(i,2) = X(i,1)*s + X(i,2)*c;
-end
+%apply transformation
+RT = T * X;
+
+%back to original coordinates
+RT = RT(1:2, :)';
 
 m = min(RT(:,1));
 if m < 0 
@@ -28,8 +30,4 @@ if m < 0
     RT(:,2) = RT(:,2) - m;
 end
 
-RT(:,1) = RT(:,1) + movex;
-RT(:,2) = RT(:,2) + movey;
-
 end
-

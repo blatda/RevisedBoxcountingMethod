@@ -15,6 +15,7 @@ switch met
         counter = zeros(subCell{:});
         for i=1:size(X,1)
             t = ceil(X(i,:)/a);
+            %t = t + (t == 0); %kde je 0 nastav 1
             subCell = num2cell(t);
             counter(subCell{:}) = counter(subCell{:}) + 1;
         end
@@ -24,4 +25,3 @@ counter = counter(:);
 counter = counter(counter~=0);
 
 end
-
