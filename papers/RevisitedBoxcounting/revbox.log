@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.17)  11 MAR 2015 15:15
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.17)  25 MAR 2015 00:53
 entering extended mode
 **revbox.tex
 
@@ -318,11 +318,11 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  3540 strings out of 493921
  49983 string characters out of 3144876
- 117780 words of memory out of 3000000
+ 118780 words of memory out of 3000000
  6764 multiletter control sequences out of 15000+200000
  13022 words of font info for 54 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,19n,32p,1218b,1436s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,19n,32p,1218b,1442s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
@@ -343,7 +343,7 @@ lic/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
 msfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/symbols/msbm7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw
 /courier/ucrr8a.pfb>
-Output written on revbox.pdf (8 pages, 259049 bytes).
+Output written on revbox.pdf (8 pages, 259281 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

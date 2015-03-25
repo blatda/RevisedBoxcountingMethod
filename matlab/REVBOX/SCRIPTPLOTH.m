@@ -1,6 +1,5 @@
 % SCRIPTPLOTH
 
-
 [ X, dim ] = FRAC43(7);
 %[ X, dim ] = FRAC32( 11 );
 %[ X, dim ] = FRAC53( 7 );
@@ -11,10 +10,6 @@ X = X(2:end-1,2:end-1);
 A = 2:30;
 %A = 20:1:28;
 %A = 10:1.7:50;
-
-%A = 10:2:250;
-
-
 
 %A = 10:2:250; <= this
 %A = 10:50:250;
@@ -50,7 +45,7 @@ for i=1:length(A)
     end
     
     for j=1:rn
-        Y = RANDROTTRAN( X, RN(j,1)*2*pi, RN(j,2), RN(j,3) );
+        Y = RANDROTTRAN( X, RN(j,1), RN(j,2), RN(j,3) );
         [ counter ] = BOXCOUNTPIX2( Y, A(i));
         k = size(counter,1);
         N = sum(counter);

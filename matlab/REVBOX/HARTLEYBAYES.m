@@ -8,7 +8,6 @@ function H0=HARTLEYBAYES(N, alpha)
     for j=1:nmax-K
        H0old=H0;
        b=b/j*(K+j)*gamma((K+j)*alpha)/gamma((K+j)*alpha-alpha)*gamma(Ntotal+(K+j)*alpha-alpha)/gamma(Ntotal+(K+j)*alpha);
-       %b=b/j*(k+j)*(k+j-1)/(k+Ntotal+j-1);
        bay=bay+b;
         bay0=bay0+b*log(K+j);
         H0=bay0/bay;
