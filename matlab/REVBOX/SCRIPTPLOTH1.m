@@ -1,5 +1,5 @@
 % SCRIPTPLOTH1
-
+clear all; close all; clc;
 
 [ X, dim ] = FRAC43( 7 );
 %[ X, dim ] = FRAC32( 11 );
@@ -8,64 +8,48 @@
 
 X = X(2:end-1,2:end-1);
 
-%A = 5:30;
-A = 10:50:250;
-%A = 10:4:50;
-
+A = 30:6:60;
+%A = 20:1:28;
+%A = 10:1.7:50;
+%A = 10:2:250; <= this
+%A = 10:50:250;
+%A = 10:0.7:22;
 %A = [5 7 11 13 17 19 23 25];
 %A = [1 3 9 27 81 243];
 %A = primes(500);
 
 en = 3; % entropy number
+rn = 10; % random number
+alpha = 0.5;
 
-
-
-rn = 100; % random number
-RN = MYRANDNUMS(rn);
-
-R = zeros(rn, en);
-
-
-H = zeros(length(A),en);
-H1 = zeros(rn,length(A));
-H2 = zeros(rn,length(A));
-H3 = zeros(rn,length(A));
-
+R = zeros(rn, length(A), en);
 
 [X] = COORDINATES(X);
+RN = MYRANDNUMS(rn);
 
-disp('celkem pruchodu ');
-disp(length(A));
+disp(['celkem probehne pruchodu: ' num2str(length(A)) ]);
 for i=1:length(A)
-    if mod(i,5) == 0
-        disp(i);
-    end
-    
+    disp(['  ' num2str(i) '. zacinam pocitat pro A: ' num2str(A(i))]);
     for j=1:rn
         Y = RANDROTTRAN( X, RN(j,1), RN(j,2), RN(j,3) );
-        [ counter ] = BOXCOUNTPIX( Y, A(i));
+        Nvec = BOXCOUNTPIX2( Y, A(i));
         
-        zerosnum = ceil(max(X(:,1))/A(i))*ceil(max(X(:,2))/A(i)) - size(counter,1);
+        zerosnum = ceil(max(X(:,1))/A(i))*ceil(max(X(:,2))/A(i)) - size(Nvec,1); %???
         
         %semi Jeff
-        counter = counter + 1/2;
+        %Nvec = Nvec + 1/2; %???
         
-        counter = [counter; zeros(zerosnum, 1)]; 
+        Nvec = [Nvec; zeros(zerosnum, 1)]; 
         
-        k = size(counter,1);
-        N = sum(counter);
-        R(j,1) = SHANNON(counter./N);
-        R(j,2) = SHANNON(counter./N) + (k-zerosnum-1)/(2*N);
-        R(j,3) = SHANNONBAYES(counter');
+        K = size(Nvec,1); %???
+        N = sum(Nvec);
+        R(j,i,1) = SHANNON(Nvec./N);                    %naive
+        R(j,i,2) = R(j,i,1) + (K-zerosnum-1)/(2*N);     %Miller
+        R(j,i,3) = SHANNONBAYES(Nvec);
     end
-    H1(:,i) = R(:,1); 
-    H2(:,i) = R(:,2); 
-    H3(:,i) = R(:,3); 
-    
-    H(i,1) = mean(R(:,1));
-    H(i,2) = mean(R(:,2));
-    H(i,3) = mean(R(:,3));
 end
+
+H = squeeze(mean(R, 1));
 
 disp(dim);
 hold on
@@ -73,8 +57,8 @@ cmap = hsv(en+1);
 cmap = cmap([1,3:end],:);
 for i = 1:en
   plot(log(A),H(:,i),'-','Color',cmap(i,:));
-  [ aa, bb ] = MNCLIN( log(A), H(:,i)' );
-  disp(-aa);
+  X = MNCLIN( log(A)', H(:,i) );
+  disp(-X(1));
   
 %   switch i
 %     case 1 
@@ -88,13 +72,6 @@ for i = 1:en
   
 end
 
-
-% plot(log(A),H(:,1),'k-');
-% plot(log(A),H(:,2),'g-');
-% plot(log(A),H(:,3),'b-');
-% plot(log(A),H(:,4),'r-');
-% plot(log(A),H(:,5),'k-');
-% plot(log(A),H(:,6),'g-');
 zacatek = 2;
 bod = [log(A(zacatek)), H(zacatek,en)];
 od = 0;

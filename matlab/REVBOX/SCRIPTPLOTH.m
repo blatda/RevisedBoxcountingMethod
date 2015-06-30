@@ -1,4 +1,5 @@
 % SCRIPTPLOTH
+clear all; close all; clc;
 
 [ X, dim ] = FRAC43(7);
 %[ X, dim ] = FRAC32( 11 );
@@ -7,110 +8,67 @@
 
 X = X(2:end-1,2:end-1);
 
-A = 2:30;
+A = [5 7 10 15 20 30 50 70 100 150 200 300 500 700 1000];
+%A = 5:5:50;
 %A = 20:1:28;
 %A = 10:1.7:50;
-
 %A = 10:2:250; <= this
 %A = 10:50:250;
-
 %A = 10:0.7:22;
-
 %A = [5 7 11 13 17 19 23 25];
 %A = [1 3 9 27 81 243];
 %A = primes(500);
 
-en = 5; % entropy number
+en = 2;  % number of estimates types
+rn = 10; % number of random rotation
+alpha = 1;%0.5 : 0.5 : 10;
 
+R = zeros(rn, length(A), en); % help matrix
 
-rn = 10; % random number
+X = COORDINATES(X);
 RN = MYRANDNUMS(rn);
 
-R = zeros(rn, en);
-
-H = zeros(length(A),en);
-H1 = zeros(rn,length(A));
-H2 = zeros(rn,length(A));
-H3 = zeros(rn,length(A));
-H4 = zeros(rn,length(A));
-H5 = zeros(rn,length(A));
-
-[X] = COORDINATES(X);
-
-disp('celkem pruchodu ');
-disp(length(A));
-for i=1:length(A)
-    if mod(i,5) == 0
-        disp(i);
+disp(['celkem probehne pruchodu: ' num2str(length(A)) ]);
+ for j=1:rn  
+    disp(['  zacinam pocitat pro rotaci: ' num2str(j)]);
+    Y = RANDROTTRAN( X, RN(j,1)*2*pi, RN(j,2), RN(j,3) );
+    for i=1:length(A) 
+        Nvec = BOXCOUNTPIX2( Y, A(i));        
+        K = sum(Nvec>0); N = sum(Nvec);        
+        R(j, i, 1) = log(K);                        %naive
+        R(j, i, 2) = HARTLEYBAYES(Nvec, alpha);
+        disp(['     ' num2str(i) '. mrizka velikosti: ' num2str(A(i)) '. HARTLEYBAYES: ' num2str(R(j, i, end))]);
     end
-    
-    for j=1:rn
-        Y = RANDROTTRAN( X, RN(j,1), RN(j,2), RN(j,3) );
-        [ counter ] = BOXCOUNTPIX2( Y, A(i));
-        k = size(counter,1);
-        N = sum(counter);
-        R(j,1) = log(k);
-        R(j,2) = R(j,1) + k*(k+1)*log(1+1/k)/N;
-        R(j,3) = R(j,2) + (1/2)*(k*(k+2)*(k+1)*(log(k+2)-log(k)-2*k*log(k+1)+k*log(k+2)+k*log(k)))/N^2;
-        R(j,4) = log(k) + log(N/(N-k));
-        R(j,5) = HARTLEYBAYES(counter,1);
-    end
-    H1(:,i) = R(:,1);
-    H2(:,i) = R(:,2);
-    H3(:,i) = R(:,3);
-    H4(:,i) = R(:,4);
-    H5(:,i) = R(:,5);
-    
-    H(i,1) = mean(R(:,1));
-    H(i,2) = mean(R(:,2));
-    H(i,3) = mean(R(:,3));
-    H(i,4) = mean(R(:,4)); 
-    H(i,5) = mean(R(:,5));
 end
+H = squeeze(mean(R, 1));
 
 disp(dim);
 hold on
 cmap = hsv(en+1);
 cmap = cmap([1,3:end],:);
-for i = 1:en % [1, en] %
-  plot(log(A),H(:,i),'-','Color',cmap(i,:));
-  [ aa, bb ] = MNCLIN( log(A), H(:,i)' );
-  disp(-aa);
-  
-%   switch i
-%     case 1 
-%         [ aa, bb, cb1, cb2 ] = GLS( H1, A );
-%     case 2
-%         [ aa, bb, cb1, cb2 ] = GLS( H2, A );
-%     case 3
-%         [ aa, bb, cb1, cb2 ] = GLS( H3, A );
-%     case 4
-%         [ aa, bb, cb1, cb2 ] = GLS( H4, A );
-%     case 5
-%         [ aa, bb, cb1, cb2 ] = GLS( H5, A );
-%   end
-%   fprintf('%f \n < %f , %f > (+- %f) \n \n', bb, cb1, cb2, (cb2-cb1)/2 );
+for i = 1:en
+  plot(log(A),H(:,i),'.-','Color',cmap(i,:));
+  [ b, se, s2 ] = MNCLIN( A, R(:,:,i) );
+  [ b2, se2, s22, cb1, cb2, T ] = GLS( A, R(:,:,i), 0 );
+  %coeff = fgls([ones(size(A')), -log(A)'],H(:,i),'display','final');
+  %plot(T*log(A)',T*H(:,i),':','Color',cmap(i,:));
+  disp(['MNC - ' 'b1: ' num2str(b(1)) '  b2: ' num2str(b(2)) ' se: ' num2str(se)  ' s2: ' num2str(s2) ]);
+  disp(['GLS - ' 'b1: ' num2str(b2(1)) '  b2: ' num2str(b2(2)) ' se: ' num2str(se2)  ' s2: ' num2str(s22) '  cb1: ' num2str(cb1) ' cb2: ' num2str(cb2)]);
 end
 
-
-% plot(log(A),H(:,1),'k-');
-% plot(log(A),H(:,2),'g-');
-% plot(log(A),H(:,3),'b-');
-% plot(log(A),H(:,4),'r-');
-% plot(log(A),H(:,5),'k-');
-% plot(log(A),H(:,6),'g-');
 zacatek = length(A); 
 bod = [log(A(zacatek)), H(zacatek,en)];
 od = 0;
 do = 5;
-plot([od, do], [bod(2) + dim*bod(1) - dim*od, bod(2) + dim*bod(1) - dim*do], 'k--', 'LineWidth',1);
+plot([od, do], [bod(2) + dim*bod(1) - dim*od, bod(2) + dim*bod(1) - dim*do], 'k--', 'LineWidth',1); %theoretic
 xlabel('ln{\it a}','FontSize',10)
 ylabel('H_{0}','FontSize',10)
 %axis([1.5 3 7.5 9.5])
 %axis([1.5 3 7.5 9.5])
 pe = -0.1;
 axis([log(A(1))-pe log(A(end))+pe min(H(end,:))-pe max(H(1,:))+pe])
-legend('H_{0,NAIVE}','H_{0,1}','H_{0,2}','H_{0,LOW}','H_{0,BAYES}','theoretic');
+legend('H_{0,NAIVE}', 'H_{0,BAYES}','theoretic');
+title(['alpha: ' num2str(alpha(1))])
 hold off
 
 % best = inf;

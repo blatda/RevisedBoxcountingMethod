@@ -1,32 +1,27 @@
-function [ a, b, cb1, cb2 ] = GLS( H, A )
+function [b, se, s2, cb1, cb2, T ] = GLS( A, H, lambda )
 % GLS
+% y = bX + e
+% H(m x n) - m poèet otoèení, n poèet rozmìrù møížky
 
-N = length(A);
-C = cov(H);
+[m, n] = size(H); 
+y = mean(H,1)';
+X = [ones(n,1), -log(A')];
+V = cov(H)+eye(n)*lambda; 
+G = pinv(V);
+Varb = inv(X'*G*X);
+b = Varb*X'*G*y;
 
-%ccc=cond(C)
-
-Y = mean(H,1)';
-X = [ones(N,1), -log(A)'];
-
-S = X'*pinv(C)*X;
-Sinv = pinv(S);
-r = X'*pinv(C)*Y;
-B = Sinv*r;
-
-%pinv(S)
-
-e = X*B-Y;
-ssq  = sum(e.^2);
-s2 = ssq/(N-2);
-varb2 = Sinv(2,2)*s2;
-int = STUDENTTABLE( N-2 )*sqrt(varb2);
-cb1 = B(2) - int;
-cb2 = B(2) + int;
+T = sqrtm(G);
+%T = pinv(real(TT));
 
 
 
-a = B(1);
-b = B(2);
+e = X*b-y;
+ssq  = e'*e;
+se = sqrt(ssq/(n-2));
+s2 = se*sqrt(Varb(2,2));
+
+int = STUDENTTABLE( n-2 )*s2;
+cb1 = b(2) - int;
+cb2 = b(2) + int;
 end
-

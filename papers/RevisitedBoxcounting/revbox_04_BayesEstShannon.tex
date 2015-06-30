@@ -1,19 +1,20 @@
 \section {Bayesian Estimation of Shannon Entropy}
-In the case when the number of events $n$ is known, we can perform Bayesian estimation of Shannon entropy as
+In the case when the number of events $n$ is known, we perform Bayesian estimation of Shannon entropy for arbitrary $\alpha_j = \alpha^{*} > 0$ as
+\[ -\sum_{i=1}^M \frac{\Gamma(N+\alpha)}{\Gamma(n_i+\alpha_i)} \frac{\Gamma(n_i+\alpha_i+1)}{\Gamma(N+\alpha+ 1)}\left(\psi^{(0)}(n_i+\alpha_i+1) -\psi^{(0)}(N+\alpha+ 1) \right) \]
 \begin{equation} 
 \label{eq:hjednan}
-\hat{H}_{1,\scriptsize{n}} = \text{E}H_{1}(K=n) = -\sum_{j=1}^{n} \left( \frac{N_{j}+1}{N+n} \left( \psi(N_{j}+2) - \psi(N+n+1) \right) \right)
+\hat{H}_{1,\scriptsize{n}} = \text{E}H_{1}(K=n) = -\sum_{j=1}^{n} \left( \frac{N_{j}+\alpha^*}{N+n\alpha^*} \left( \psi(N_{j}+\alpha^*+1) - \psi(N+n\alpha^*+1) \right) \right),
 \end{equation}
-where $\psi$ is digamma function. But when the number of events $n$ is unknown, we can use $K$ as lower estimate of $n$ and perform final Bayesian estimation as
+where $\psi$ is digamma function. However, when the number of events $n$ is unknown, we can use $K$ as a lower estimate of $n$ and perform the final Bayesian estimation as
 \begin{equation} 
 \label{eq:hjednab}
-\hat{H}_{1,\mbox{\scriptsize{Bayes}}} = \sum_{n=K}^{\infty}{\text{p}\left(n \: \middle| \:K,N \right)\hat{H}_{1,\scriptsize{n}}}
+\hat{H}_{1,\mbox{\scriptsize{Bayes}}} = \sum_{n=K}^{\infty}{\text{p}\left(n \: \middle| \:K,N \right)\hat{H}_{1,\scriptsize{n}}},
 \end{equation}
-which is also convergent sum for $N \ge K+2$. \\
+which is also a convergent sum for $N \ge K+2$. \\
 \\*
-Substituting $n=K+j$ we obtain adequate formula.
+Substituting $n=K+j$, we obtain an adequate formula
 \begin{equation} 
 \label{eq:hjbb}
-\hat{H}_{1,\mbox{\scriptsize{Bayes}}} = \frac{\sum_{j=0}^{\infty}b_{j}H_{1,K+j}}{\sum_{j=0}^{\infty}b_{j}}
+\hat{H}_{1,\mbox{\scriptsize{Bayes}}} = \frac{\sum_{j=0}^{\infty}b_{j}\hat{H}_{1,K+j}}{\sum_{j=0}^{\infty}b_{j}}.
 \end{equation}
-Unfortunately asymptotic expansion of (\ref{eq:hjbb}) depends on individual frequencies $N_{j}$. But $\hat{H}_{1,n} \leq \ln{n}$ and therefore $\hat{H}_{1,K+j} \leq \ln{K+j}$ which implies the convergence of $\sum_{j=0}^{\infty}b_{j}H_{1,K+j}$ according to majority rule and (\ref{eq:hnbayesb}).
+Unfortunately, asymptotic expansion of (\ref{eq:hjbb}) depends on individual frequencies $N_{j}$. But $\hat{H}_{1,n} \leq \ln{n}$, accordingly $\hat{H}_{1,K+j} \leq \ln{K+j}$, which implies the convergence of $\sum_{j=0}^{\infty}b_{j}\hat{H}_{1,K+j}$ based on majority rule and (\ref{eq:hnbayesb}).

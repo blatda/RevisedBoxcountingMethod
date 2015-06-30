@@ -1,19 +1,20 @@
 \section {Revisited Box Counting Method}
-Let $\mathbb{F} \subset \mathbb{R}^{m}$ be set of $N$ points placed into $m$-dimensional rectangular grid of element size $a > 0$. Let $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$ be unbiased estimate of Hartley entropy $H_{0}$. Fitting linear model
+Let $\mathbb{F} \subset \mathbb{R}^{m}$ be a set of $N$ points placed into $m$-dimensional rectangular grid of element size $a > 0$. Let $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$ be an unbiased estimate of Hartley entropy $H_{0}$. Fitting the linear model
 \begin{equation} 
 \label{eq:hlinmod}
-\hat{H}_{0,\mbox{\scriptsize{Bayes}}} = A - D_{0}\ln{a}
+\hat{H}_{0,\mbox{\scriptsize{Bayes}}} = A - \hat{D}_{0}\ln{a}
 \end{equation}
-via method of least squares is called Revisited Box Counting.\\
+via the method of least squares is called Revisited Box Counting.\\
 \\*
-Revisited Box Counting can be modified by:
-\begin{itemize}
-\item using $\hat{H}_{1,\mbox{\scriptsize{Bayes}}}$ instead of $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$ comes to estimation of information dimension [\ref{bib:Information dimension}] according to model
+Revisited Box Counting can be modified by %:
+%\begin{itemize}
+%\item 
+using $\hat{H}_{1,\mbox{\scriptsize{Bayes}}}$ instead of $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$ comes to estimation of information dimension [\ref{bib:Information dimension}] according to
 \begin{equation} 
 \label{eq:inform}
-\hat{H}_{1,\mbox{\scriptsize{Bayes}}} = A - D_{1}\ln{a}
+\hat{H}_{1,\mbox{\scriptsize{Bayes}}} = A - \hat{D}_{1}\ln{a}.
 \end{equation}
-\item using non-trivial approximations of $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$, namely: $\hat{H}_{0,1}, \hat{H}_{0,2}, \hat{H}_{0,\mbox{\scriptsize{low}}}$ instead of $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$
-\end{itemize}
-Remark: \\
-Using of $\hat{H}_{0,0} \equiv \hat{H}_{0,\mbox{\scriptsize{naive}}}$ instead of $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$ comes back to traditional Box Counting.
+%\item using non-trivial approximations of $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$, namely: $\hat{H}_{0,1}, \hat{H}_{0,2}, \hat{H}_{0,\mbox{\scriptsize{low}}}$ instead of $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$
+%\end{itemize}
+%Remark: \\
+%Using of $\hat{H}_{0,0} \equiv \hat{H}_{0,\mbox{\scriptsize{naive}}}$ instead of $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$ comes back to traditional Box Counting.

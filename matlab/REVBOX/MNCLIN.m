@@ -1,21 +1,17 @@
-function [ a, b ] = MNCLIN( x, y )
+function [b, se, s2] = MNCLIN( A, H )
 %MNCLIN
-%  y = ax + b
+% y = bX + e
+% H(m x n) - m poèet otoèení, n poèet rozmìrù møížky
 
-sx = sum(x);
-sy = sum(y);
-sx2 = sum(x.^2);
-sxy = sum(x.*y);
-n = length(x);
+[m, n] = size(H);
+y = mean(H,1)';
+X = [ones(n,1), -log(A)'];
+b = X\y;
 
-A = [sx2, sx; sx, n];
-b = [sxy; sy];
+Varb = inv(X'*X);
 
-v = linsolve(A,b);
-
-a = v(1);
-b = v(2);
-
-
+e = X*b-y;
+ssq  = e'*e;
+se = sqrt(ssq/(n-2));
+s2 = se*sqrt(Varb(2,2));
 end
-

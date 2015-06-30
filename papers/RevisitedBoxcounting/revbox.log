@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.17)  25 MAR 2015 00:53
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.17)  26 MAY 2015 10:14
 entering extended mode
 **revbox.tex
 
@@ -242,51 +242,45 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 ("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
 oxcounting\revbox_04_BayesEstShannon.tex"
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 5.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 6.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 10.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 11.
 
 )
 ("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
-oxcounting\revbox_05_RevisedBoxCounting.tex" [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
+oxcounting\revbox_05_RevisedBoxCounting.tex")
+("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
+oxcounting\revbox_06_ExpPart.tex" [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 10.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
+
+
+LaTeX Warning: Reference `fig:frac' on page 4 undefined on input line 44.
+
+
+LaTeX Warning: Reference `fig:fracshan' on page 4 undefined on input line 44.
+
+
+LaTeX Warning: Reference `fig:frac' on page 4 undefined on input line 46.
+
+
+LaTeX Warning: Reference `fig:fracshan' on page 4 undefined on input line 46.
+
+
+LaTeX Warning: Reference `tab:est1' on page 4 undefined on input line 48.
+
+
+LaTeX Warning: Reference `tab:est4s' on page 4 undefined on input line 48.
+
 )
 ("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
-oxcounting\revbox_06_ExpPart.tex"
-
-LaTeX Warning: Reference `fig:frac' on page 4 undefined on input line 54.
-
-
-LaTeX Warning: Reference `fig:fracshan' on page 4 undefined on input line 54.
-
-
-LaTeX Warning: Reference `fig:frac' on page 4 undefined on input line 56.
-
-
-LaTeX Warning: Reference `fig:fracshan' on page 4 undefined on input line 56.
-
-
-LaTeX Warning: Reference `tab:est1' on page 4 undefined on input line 58.
-
-
-LaTeX Warning: Reference `tab:est4s' on page 4 undefined on input line 58.
-
-[4])
-Overfull \hbox (12.58704pt too wide) in paragraph at lines 92--93
-\OT1/cmr/bx/n/10 Acknowledgement: \OT1/cmr/m/n/10 The pa-per was cre-ated with 
-the sup-port of CTU in Prague, Grant SGS14/208/OHK4/3T/14. 
- []
-
-
-("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
-oxcounting\revbox_bibliography.tex") [5]
+oxcounting\revbox_bibliography.tex" [4]) [5]
 ("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
 oxcounting\revbox_app_derivation.tex"
 Overfull \hbox (19.57452pt too wide) detected at line 32
@@ -294,21 +288,14 @@ Overfull \hbox (19.57452pt too wide) detected at line 32
 OT1/cmr/m/n/10 ) = [] [] [][][] = [][] [] [] []
  []
 
-
-Overfull \hbox (7.20238pt too wide) in paragraph at lines 54--56
-\OT1/cmr/m/n/10 The Raabe cri-te-rion [8[]] states se-ries of pos-i-tive mem-be
-rs $[][] \OML/cmm/m/it/10 a[]$ \OT1/cmr/m/n/10 as con-ver-gent if ex-ists $\OML
-/cmm/m/it/10 L \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 n []$
+[6]
+Overfull \hbox (21.03574pt too wide) in paragraph at lines 61--63
+\OT1/cmr/m/n/10 The Raabe cri-te-rion [8[]] will state se-ries of pos-i-tive me
+m-bers $[][] \OML/cmm/m/it/10 a[]$ \OT1/cmr/m/n/10 as con-ver-gent if ex-ists $
+\OML/cmm/m/it/10 L \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 n []$
  []
 
-[6])
-("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
-oxcounting\revbox_code.tex"
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 4.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [7]) [8]
+) [7]
 ("C:\Users\David\Disk Google\_Vyzkum\RevisedBoxcountingMethod\papers\RevisitedB
 oxcounting\revbox.aux")
 
@@ -316,36 +303,33 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3540 strings out of 493921
- 49983 string characters out of 3144876
- 118780 words of memory out of 3000000
- 6764 multiletter control sequences out of 15000+200000
- 13022 words of font info for 54 fonts, out of 3000000 for 9000
+ 3495 strings out of 493921
+ 49178 string characters out of 3144876
+ 111726 words of memory out of 3000000
+ 6727 multiletter control sequences out of 15000+200000
+ 12507 words of font info for 52 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,19n,32p,1218b,1442s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/symbols/msbm7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw
-/courier/ucrr8a.pfb>
-Output written on revbox.pdf (8 pages, 259281 bytes).
+ 27i,17n,32p,1256b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on revbox.pdf (7 pages, 232666 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
+ 94 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
