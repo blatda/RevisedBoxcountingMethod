@@ -1,0 +1,85 @@
+\section {Bayesian Estimation of Hartley Entropy}
+We suppose Dirichlet distribution [\ref{bib:Multinomial Dirichlet}] of a random vector $\mathbf{p} = (p_{1},...,p_{n})$ satisfying  $p_{j} \ge 0$, $\sum_{j=1}^{n} p_{j} = 1$, with $\alpha_j = \alpha^{*} > 0$. Using properties of multinomial and its conjugate distribution --- the Dirichlet distribution, we can calculate probability estimate $\mathrm{\hat{p}}(K|n,N)$ of the random variable $K \in \mathbb{N}$ for $K \le \min(n,N)$ as 
+\begin{equation} 
+\label{eq:pknn}
+\begin{split}
+\mathrm{\hat{p}}(K \: | \: n,N) & = \text{prob}\left(\sum_{N_{j} > 0}{1}=K \: \middle| \: n,\sum_{j=1}^{n}{N_{j}}=N\right) \\ 
+& = \binom{n}{K} \frac{\Gamma({N+1}) \Gamma(n\alpha^{*})}{\Gamma(N+n\alpha^{*})} \sum_{\vec{N} \in \mathbb{D}_{K,N}} \prod_{j=1}^{K} \frac{ \Gamma(N_{j} + \alpha^{*})}{ \Gamma(N_j+1) \Gamma(\alpha^{*})}.
+\end{split}
+\end{equation}
+Derivation of (\ref{eq:pknn}) is included in the Appendix \ref{subsec:app1}. When $N \ge K+2$, we can calculate 
+\begin{equation} 
+\label{eq:skn}
+S_{K,N} = \sum_{n=K}^{\infty}{\mathrm{\hat{p}}\left(K \: \middle| \: n,N\right)}.
+\end{equation}
+When the number of events is constrained as $n \leq n_{\text{max}} $, we apply an alternative formula
+\begin{equation} 
+\label{eq:sknalt}
+S_{K,N}^{*} = \sum_{n=K}^{n_{\text{max}}}{\mathrm{\hat{p}}\left(K \: \middle| \: n,N\right)}.
+\end{equation}
+Convergence of the infinite series (\ref{eq:skn}) is proved in the Appendix \ref{subsec:conv}. Having a knowledge of $K,N$ where $N \ge K+2$, we can calculate a Bayesian density
+\begin{equation} 
+\label{eq:pnkn}
+\mathrm{\hat{p}}\left(n \: \middle| \: K,N \right) = \frac{\mathrm{\hat{p}}\left(K \: \middle| \: n,N\right)}{S_{K,N}}, n \ge K
+\end{equation}
+Thereafter, Bayesian estimate of Hartley entropy comes out as
+\begin{equation} 
+\label{eq:hnbayes}
+\begin{split}
+\hat{H}_{0,\mbox{\scriptsize{Bayes}}} & = \text{E}H_{0}  = \sum_{n=K}^{\infty}{\mathrm{\hat{p}}\left(n \: \middle| \: K,N\right)\ln{n}} = \sum_{n=K}^{\infty} \frac{\mathrm{\hat{p}}\left(K \: \middle| \: n,N\right)\ln{n}}{S_{K,N}}  \\
+ & =  \frac{ \sum_{n=K}^{\infty} \mathrm{\hat{p}}\left(K \: \middle| \: n,N\right)\ln{n}}{\sum_{n=K}^{\infty} \mathrm{\hat{p}}\left(K \: \middle| \: n,N\right)} > \ln{K},
+\end{split}
+\end{equation}
+which is a convergent sum as well. We gain an equivalent formula by substituting $n=K+j$ \begin{equation} 
+\label{eq:hnbayesb}
+\hat{H}_{0,\mbox{\scriptsize{Bayes}}} = \frac{\sum_{j=0}^{\infty}{b_{j}\ln{(K+j)}}}{\sum_{j=0}^{\infty}{b_j}},
+\end{equation}
+where
+\begin{equation}
+b_{j}= \binom{K+j}{j} \frac{\mathrm{B}\left( (K+j)\alpha^{*}, N \right)}{\mathrm{B}\left( K\alpha^{*}, N \right)}.
+\end{equation} 
+Convergence of the sums in (\ref{eq:hnbayes}) is proved in Appendix \ref{subsec:conv}. Particular coefficients $b_{j}$ can also be generated recursively
+\begin{equation}
+\label{eq:breform}
+\begin{split}
+& b_{0} = 1 \\
+& b_{j} = \frac{K+j}{j} \frac{\Gamma{((K+j)\alpha^{*})}}{\Gamma{((K+j)\alpha^{*}-\alpha^{*})}}\frac{\Gamma{(N+(K+j)\alpha^{*} -\alpha^{*})}}{\Gamma({N+(K+j)\alpha^{*})}} b_{j-1} \\
+& b_{j} = b_{j-1} \frac{K+j}{j}\prod_{u=0}^{N-1} \left(1 - \frac{\alpha^{*}}{(K+j)\alpha^{*}+u} \right).
+\end{split}
+\end{equation}
+%Asymptotic properties of Bayesian estimate can be investigated for $N \rightarrow +\infty$ via limits
+%\begin{equation} 
+%\label{eq:lim}
+%\begin{split}
+%\lim_{N \rightarrow +\infty} & {\hat{H}_{0,\mbox{\scriptsize{Bayes}}}} = \ln{K}, \\
+%\lim_{N \rightarrow +\infty} & {(\hat{H}_{0,\mbox{\scriptsize{Bayes}}}-\ln{K})N} = K(K+1)\ln(1+1/K), \\
+%\lim_{N \rightarrow +\infty} & {\left(\hat{H}_{0,\mbox{\scriptsize{Bayes}}}-\ln{K}-\frac{K(K+1)\ln(1+1/K)}{N}\right)N^2} = \\
+%& \frac{1}{2}\left(K(K+2)(K+1)\left(\ln(K+2)-\ln(K)-2K\ln(K+1)+K\ln(K+2)+K\ln(K)\right)\right),
+%\end{split}
+%\end{equation}
+%Therefore
+%\begin{equation} 
+%\label{eq:hroz}
+%\begin{split}
+%\hat{H}_{0,\mbox{\scriptsize{Bayes}}} \approx & \ln{K} + \frac{K(K+1)\ln(1+1/K)}{N} + \\ 
+%& \frac{\left(K(K+2)(K+1)\left(\ln(K+2)-\ln(K)-2K\ln(K+1)+K\ln(K+2)+K\ln(K)\right)\right)}{2N^2}
+%\end{split}
+%\end{equation}
+%When $K$ is also large, we can roughly approximate Hartley entropy as
+%\begin{equation} 
+%\label{eq:hartapp}
+%\hat{H}_{0,\mbox{\scriptsize{Bayes}}} \approx \ln{K} + \frac{K+1}{N}
+%\end{equation}
+%which is very similar to Miller correction (\ref{eq:miller}) in the case of Shannon entropy estimation. Meanwhile formula (\ref{eq:hnbayes}) represents Bayesian estimate of $H_{0}$, formulas (\ref{eq:hnulaap}), (\ref{eq:hartapp}), and (\ref{eq:hroz}) are approximations of zero, first, and second order. \\
+%\\*
+%Formula (\ref{eq:hnbayesb}) can be also expanded to the form
+%\begin{equation} 
+%\label{eq:hnbayesbexp}
+%\hat{H}_{0,\mbox{\scriptsize{Bayes}}} = \ln{K} + \sum_{j=1}^{\infty} \frac{1}{j} \varphi(K)\left(\frac{K}{N}\right)^{j}
+%\end{equation}
+%where $\varphi(K)>1$ for all $K \in \mathbb{N}$ and $\lim_{K \rightarrow \infty} \varphi(K) = 1$. Therefore, we obtain lower estimate
+%\begin{equation}
+%\label{eq:hnbayesbexplow}
+%\hat{H}_{0,\mbox{\scriptsize{Bayes}}} > \ln{K} + \sum_{j=1}^{\infty} \frac{1}{j} \left(\frac{K}{N}\right)^{j} = \ln{K} - \ln(1 - \frac{K}{N}) = H_{0,\mbox{\scriptsize{low}}}
+%\end{equation}
+%which exists for $K < N$.

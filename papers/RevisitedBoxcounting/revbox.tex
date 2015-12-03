@@ -10,6 +10,7 @@
 \usepackage{courier}
 \usepackage[countmax]{subfloat}
 \usepackage{here}
+\usepackage{epstopdf}
 
 \linespread{1}
 
@@ -87,7 +88,7 @@ blatsdav@fjfi.cvut.cz\\
 \input{revbox_06_ExpPart.tex}
 
 \section {Conclusion}
-In this paper we derived the Bayesian estimator $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$ of Hartley entropy for a general value of the parameter $\alpha^*$. As shown, similar approach can also be used to estimate Shannon entropy $\hat{H}_{1,\mbox{\scriptsize{Bayes}}}$. These both can result in less biased estimates of the appropriate entropy when used with proper $\alpha^*$ and the grid size $a$. According to the relation between fractal (information) dimension and Hartley (Shannon) entropy, we estimated dimensions from experimental data. The results turned out to be significantly more accurate than those estimated naively without a priory information.
+In this paper we derived the Bayesian estimator $\hat{H}_{0,\mbox{\scriptsize{Bayes}}}$ of Hartley entropy for a general value of the parameter $\alpha^*$. As shown, similar approach can also be used to estimate Shannon entropy $\hat{H}_{1,\mbox{\scriptsize{Bayes}}}$. These both can result in less biased estimates of the appropriate entropy when used with proper $\alpha^*$ and the grid size $a$. According to the relation between fractal (information) dimension and Hartley (Shannon) entropy, we estimated dimensions from experimental data. The results turned out to be significantly more accurate than those estimated naively.
 
 
 \vspace*{10pt} \noindent {\bf Acknowledgement:} The authors acknowledge the funding from the CTU in Prague, \\ Grant SGS14/208/OHK4/3T/14.
@@ -95,7 +96,7 @@ In this paper we derived the Bayesian estimator $\hat{H}_{0,\mbox{\scriptsize{Ba
 \input{revbox_bibliography.tex}
 
 %\input{revbox_graphs.tex}
-%
+
 %\input{revbox_tables.tex}
 
 \newpage
@@ -108,8 +109,11 @@ In this paper we derived the Bayesian estimator $\hat{H}_{0,\mbox{\scriptsize{Ba
 
 \input{revbox_app_derivation.tex}
 
-%\input{revbox_code.tex}
+\input{revbox_code.tex}
+
 
 \end{appendices}
+
+
 
 \end{document}

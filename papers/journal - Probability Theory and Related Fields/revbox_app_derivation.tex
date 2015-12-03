@@ -1,0 +1,101 @@
+\subsection {Derivation of $\hat{\mathrm{p}}(K|n,N)$ in (\ref{eq:pknn})}
+\label{subsec:app1}
+Let $\mathbb{Q}_{n} = \{ \vec{q} \in (\mathbb{R}_{0}^{+})^{n} | \sum_{j=1}^{n}q_{j} = 1 \}$ be a support set of a Dirichlet-distributed random variable $\vec{p} \in \mathbb{Q}_{n}$ with parameters $\alpha_j$, for $j = 1,...,n$. The conditional probability of an~integer $K$ satisfying $1 \le K \le \min(n,N)$ is 
+\begin{equation} 
+\label{eq:probpkn}
+\text{p}(K \: | \: n,N) = \text{prob}\left(\sum_{N_{j}>0} 1 = K \: \middle| \: n, \sum_{j=1}^{n}N_{j} = N\right).
+\end{equation}
+The vector of $N_{j}$ can be reorganized to begin with positive values:
+\begin{equation} 
+\label{eq:probbinom}
+\text{p}(K \: | \: n,N) = \binom{n}{K}\text{prob}\left( \forall j=1,...,n : N_{j} > 0 \Leftrightarrow j \le K \: \middle| \: n, \sum_{j=1}^{K}N_{j}=N\right).
+\end{equation}
+Let $\mathbb{D}_{K,N} = \{ \vec{x} \in \mathbb{N}^K | \sum_{j=1}^{K}x_{j} = N \}$ be the domain of $\vec{N} = (N_{1},...,N_{K}) \in \mathbb{D}_{K,N}$. Using the mean value of a~multinomial distribution over $\mathbb{Q}_{n}$, we obtain an~unbiased estimate of $\text{p}(K \: | \: n,N)$ as
+\begin{equation} 
+\label{eq:probbinomexp}
+\begin{split}
+\mathrm{\hat{p}}(K \: | \: n,N) & = \binom{n}{K} \text{E}\left(\sum_{\vec{N} \in \mathbb{D}_{K,N}} \binom{N}{N_{1},...,N_{K}} \prod_{j=1}^{K}p_{j}^{N_{j}} \prod_{j=k+1}^{n}p_{j}^{0} \right) \\
+& = \binom{n}{K} \sum_{\vec{N} \in \mathbb{D}_{K,N}} \binom{N}{N_{1},...,N_{K}} \text{E}\left( \prod_{j=1}^{K}p_{j}^{N_{j}}\right).
+\end{split}
+\end{equation}
+Using the generalized Beta function
+\begin{equation} 
+\label{eq:betafce}
+B(\vec{x}) = \int_{\vec{p} \in \mathbb{Q}_{m}} \prod_{j=1}^{m} p_{j}^{x_{j}-1} \text{d}\vec{p} = \frac{\prod_{j=1}^{m} \Gamma(x_{j})}{\Gamma(\sum_{j=1}^{m}x_{j})},
+\end{equation}
+we can calculate
+\begin{equation} 
+\label{eq:expprod}
+\begin{split}
+\text{E}\left( \prod_{j=1}^{K}p_{j}^{N_{j}} \right) & = \frac{\int_{\vec{p} \in \mathbb{Q}_{n}} {B(\vec{\alpha})}^{-1} \prod_{j=1}^{K} p_{j}^{N_{j}+\alpha_{j}-1}  \prod_{j=K+1}^{n} p_{j}^{\alpha_{j}-1} \text{d}\vec{p}}{\int_{\vec{p} \in \mathbb{Q}_{n}}  {B(\vec{\alpha})}^{-1}\prod_{j=1}^{n} p_{j}^{\alpha_{j}-1} \text{d}\vec{p}} \\ 
+& = \frac{\Gamma(\alpha)}{\Gamma(N+\alpha)} \prod_{j=1}^{K} \frac{\Gamma(N_{j}+\alpha_j)}{\Gamma(\alpha_j)},
+\end{split}
+\end{equation}
+where $\alpha$ is the sum of all $\alpha_j$. Therefore,
+\begin{equation} 
+\label{eq:prob}
+\begin{split}
+\mathrm{\hat{p}}(K \: | \: n,N) & = \binom{n}{K}\sum_{\vec{N} \in \mathbb{D}_{K,N}} \frac{N!}{\prod_{j=1}^{K}N_{j}!}\frac{\Gamma(\alpha)}{\Gamma(N+\alpha)} \frac{\prod_{j=1}^{K} \Gamma({ N_{j} + \alpha_j})}{\prod_{j=1}^{K} \Gamma({\alpha_j})} \\ 
+& = \binom{n}{K} \frac{\Gamma({N+1}) \Gamma(\alpha)}{\Gamma(N+\alpha)} \sum_{\vec{N} \in \mathbb{D}_{K,N}} \prod_{j=1}^{K} \frac{ \Gamma(N_{j} + \alpha_j)}{ \Gamma(N_j+1) \Gamma(\alpha_j)}
+\end{split}
+\end{equation}
+In this particular paper, we assume $\alpha_j = \alpha^{*}, \forall j = 1,...,n$ which results in a simpler form of Equation \ref{eq:prob}
+\begin{equation} 
+\label{eq:probRes}
+\mathrm{\hat{p}}(K \: | \: n,N) = \binom{n}{K} \frac{\Gamma({N+1}) \Gamma(n\alpha^{*})}{\Gamma(N+n\alpha^{*})} \sum_{\vec{N} \in \mathbb{D}_{K,N}} \prod_{j=1}^{K} \frac{ \Gamma(N_{j} + \alpha^{*})}{ \Gamma(N_j+1) \Gamma(\alpha^{*}).}
+\end{equation}
+
+\subsection {Convergence of $\sum_{j=0}^{\infty}{b_j \mathrm{ln}(K+j)} $ in (\ref{eq:hnbayesb}) and $\sum_{j=0}^{\infty}{b_j}$ in (\ref{eq:skn}) }
+\label{subsec:conv}
+
+The ratio of coefficients $b_j$ could be expressed as:
+
+\begin{equation}
+\begin{split}
+q_j & = \frac{b_{j}}{b_{j-1}}\frac{\ln(K+j)}{\ln(K+j-1)} \\ 
+&  = \frac{(K+j)}{j}\frac{\ln(K+j)}{\ln(K+j-1)} \frac{\Gamma{((K+j)\alpha^{*})}}{\Gamma{((K+j-1)\alpha^{*}})}\frac{\Gamma{(N+(K+j-1)\alpha^{*})}}{\Gamma({N+(K+j)\alpha^{*})}}.
+\end{split}
+\end{equation}
+Starting with inequality proved by Wendel [\ref{bib:Wendel}]:
+\begin{equation}
+\forall d \in [0;1], \forall x > 0: \frac{ \Gamma(x + d)}{\Gamma(x)} \leq x^{d};
+\end{equation}
+that can be generalized for $\delta = D + d$ where $D \in \mathbb{N}_0, d \in [0;1)$ as
+\begin{equation}
+\frac{ \Gamma(x + \delta)}{\Gamma(x)} \leq x^{d} \prod^{D-1}_{i=0}(x+i+d).
+\end{equation}
+We should see the similarity between $\alpha^{*} = A + a$, where $A \in \mathbb{N}_0, a \in [0;1)$, and $\delta$ leading to
+\begin{equation}
+\begin{split}
+q_j & = \frac{b_j}{b_{j-1}} \frac{\ln(K+j)}{\ln(K+j-1)} \\
+ & \leq  \frac{K+j}{j}\frac{\ln(K+j)}{\ln(K+j-1)} {\left( \frac{(K+j-1)\alpha^*}{(K+j-1)\alpha^* + N} \right)}^{a} \\ & \cdot \prod^{A-1}_{i=0}\frac{(K+j-1)\alpha^*+i+a}{(K+j-1)\alpha^*+i+a+N}
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+q_j & = \frac{b_j}{b_{j-1}} \frac{\ln(K+j)}{\ln(K+j-1)} \\ 
+& \leq  \frac{K+j}{j}\frac{\ln(K+j)}{\ln(K+j-1)} {\left( \frac{(K+j-1)\alpha^*}{(K+j-1)\alpha^* + N} \right)}^{a}
+\end{split}
+\end{equation}
+The Raabe criterion [\ref{bib:Raabe}] will state series of positive members $\sum_{n=0}^{\infty} a_n$ as convergent if exists $L = \lim_{n \to \infty} n \left(\frac{a_n}{a_{n+1}}-1 \right)$ satisfying $L>1$. Then we can calculate
+
+\begin{equation}
+\begin{split}
+L & = \lim_{j \to \infty} j \left( \frac{b_{j-1}}{b_{j}} \frac{\ln(K+j-1)}{\ln(K+j)}   - 1   \right) \\ 
+& \geq \lim_{j \to \infty} j \left( \frac{j}{K+j} \frac{\ln(K+j-1)}{\ln(K+j)} {\left( \frac{(K+j-1)\alpha^* + N}{(K+j-1)\alpha^* } \right)}^{a} - 1   \right).
+\end{split}
+\end{equation}
+Substitution $x=K+j$ leads to
+\begin{equation}
+L = \lim_{x \to \infty} (x-K)  \left( \frac{x-K}{x} \frac{\ln(x-1)}{\ln(x)} {\left( \frac{(x-1)\alpha^* + N}{(x-1)\alpha^*} \right)}^{a} - 1   \right),
+\end{equation}
+and finally
+\begin{equation}
+L = -K + \lim_{x \to \infty} \left( x{\left( 1 + \frac{N-\alpha^{*}}{x\alpha^{*}} \right)}^{a} -x{\left( 1 - \frac{1}{x} \right)}^{a} \right).
+\end{equation}
+Substituting $h = x^{-1} \to 0^{+}$ and applying l'Hospital rule, we obtain
+\begin{equation}
+L = -K + \lim_{h \to 0^{+}} \frac{ \left( 1+\frac{N-\alpha^{*}}{\alpha^{*}}h \right)^{a} - {(1-h)}^{a}}{h}  = N-K.
+\end{equation}
+Thus the series $\sum_{j=0}^{\infty}{b_j \mathrm{ln}(K+j)} $ converges absolutely for  $K \leq N-2$ because $L = N-K > 1$.
+According to majority rule, the series $\sum_{j=0}^{\infty}{b_j} = \sum_{n=K}^{\infty}{\mathrm{\hat{p}}\left(K \: \middle| \: n,N\right)}$ converges as well.
